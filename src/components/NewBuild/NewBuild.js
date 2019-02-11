@@ -9,7 +9,7 @@ class NewBuild extends Component {
   render() {
     return(
       <div>
-        New Builds
+        New Build
       </div>
     )
   }
