@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './home.css'
 
 class Home extends Component {
   constructor(props) {
@@ -8,8 +9,24 @@ class Home extends Component {
   
   render() {
     return(
-      <div>
+      <div className='homePage'>
         Home Page
+        <h1>yeet</h1>
+        <h1>yeet</h1>
+        <h1>yeet</h1>
+        <h1>yeet</h1>
+        <h1>yeet</h1>
+        <h1>yeet</h1>
+        <h1>yeet</h1>
+        <h1>yeet</h1>
+        <h1>yeet</h1>
+        <h1>yeet</h1>
+        <h1>yeet</h1>
+        <h1>yeet</h1>
+        <h1>yeet</h1>
+        <h1>yeet</h1>
+        <h1>yeet</h1>
+        <h1>yeet</h1>
       </div>
     )
   }
