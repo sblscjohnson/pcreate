@@ -26,3 +26,5 @@ app.use(bodyParser.json());
  app.post('/auth/logout', auth_ctrl.logout)
 
  // new build
+ app.get('/api/cpus', newBuild_ctrl.getcpus)
+ app.get('/api/mobos', newBuild_ctrl.getmobos)

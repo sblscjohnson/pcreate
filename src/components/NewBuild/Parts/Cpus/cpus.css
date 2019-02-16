@@ -1,0 +1,13 @@
+.cpu_pic {
+  width: 100px;
+  height: 100px
+}
+
+.mappedCpus {
+  display: flex;
+
+}
+
+.cpu {
+  margin: 2vw;
+}

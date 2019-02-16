@@ -5,7 +5,6 @@ import routes from './../../routes';
 import './../../resources/hamburgers.css'
 import './nav.css';
 
-
 class Nav extends Component {
   constructor(props) {
     super(props);
@@ -34,8 +33,8 @@ class Nav extends Component {
         <Link to='/'><img className='logo' src={pcreate_logo} alt='pcreate' /></Link>
         <div className='small'>
         <button className='lines' className='hamburger hamburger--vortex' onClick={this.buttonOn} type='button'>
-          <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
+          <span className="hamburger-box">
+            <span className="hamburger-inner"></span>
           </span>
         </button>
         </div>
@@ -55,12 +54,12 @@ class Nav extends Component {
         <Link to='/'><img className='logo' src={pcreate_logo} alt='pcreate' /></Link>
         <div className='dropdown'>
         <button className='x' className='hamburger hamburger--vortex is-active' onClick={this.buttonOff} type='button'>
-          <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
+          <span className="hamburger-box">
+            <span className="hamburger-inner"></span>
           </span>
         </button>
           <div className='dropdownItems_notHidden'>
-            <Link className='dropdown_link' onClick={this.buttonOff} to='/NewBuild'>New Build</Link>
+          <Link className='dropdown_link' onClick={this.buttonOff} to='/NewBuild'>New Build</Link>
             <Link className='dropdown_link' onClick={this.buttonOff} to='/CompletedBuilds'>Completed Builds</Link>
             <Link className='dropdown_link' onClick={this.buttonOff} to='/Account'>Account</Link>
           </div>

@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
+import routes from './routes'
 
 class NewBuild extends Component {
   constructor(props) {
@@ -9,7 +11,9 @@ class NewBuild extends Component {
   render() {
     return(
       <div>
-        New Build
+        <Link to='/NewBuild/Cpus'>Cpus</Link>
+        <Link to='/NewBuild/Motherboards'>Motherboards</Link>
+        {routes}
       </div>
     )
   }
