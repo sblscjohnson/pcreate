@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import routes from './routes'
+import './newbuild.css'
 
 class NewBuild extends Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class NewBuild extends Component {
   
   render() {
     return(
-      <div>
+      <div className='newbuild'>
         <Link to='/NewBuild/Cpus'>Cpus</Link>
         <Link to='/NewBuild/Motherboards'>Motherboards</Link>
         {routes}
@@ -19,4 +20,4 @@ class NewBuild extends Component {
   }
 }
 
-export default NewBuild;
+export default NewBuild; 

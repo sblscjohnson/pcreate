@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import Template from './Template'
 import './cpus.css'
 
 class Cpus extends Component {
@@ -19,22 +18,28 @@ class Cpus extends Component {
     })
   }
 
+  select = () => {
+    
+  }
+
   render() {
     let mappedCpus = this.state.cpu_list.map((eachCpuObject) => {
       return(
-        <Template 
-          key={eachCpuObject.id} 
-          image_url={eachCpuObject.image_url} 
-          brand={eachCpuObject.brand}
-          name={eachCpuObject.name} 
-          tdp={eachCpuObject.tdp} 
-          cores={eachCpuObject.cores} 
-          threads={eachCpuObject.threads}
-          cooler_included={eachCpuObject.cooler_included.toString()} 
-          base={eachCpuObject.base} 
-          boost={eachCpuObject.boost} 
-          price={eachCpuObject.price}
-        />
+        <div className='cpu'>
+          <img className='cpu_pic' src={eachCpuObject.image_url} alt='' />
+          <div className='textinfo'>
+            <p>Brand: {eachCpuObject.brand}</p>
+            <p>Name: {eachCpuObject.name}</p>
+            <p>TDP: {eachCpuObject.tdp} watts</p>
+            <p>Cores: {eachCpuObject.cores}</p>
+            <p>Threads: {eachCpuObject.threads}</p>
+            <p>Base Frequency: {eachCpuObject.base} Ghz</p>
+            <p>Boost Frequency: {eachCpuObject.boost} Ghz</p>
+            <p>Cooler Included: {eachCpuObject.cooler_included}</p>
+            <p>Price: ${eachCpuObject.price}</p>
+          </div>
+          <button onClick={this.select}>Select</button>
+        </div>
       )
     })
 

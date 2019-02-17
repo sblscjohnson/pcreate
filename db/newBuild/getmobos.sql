@@ -1,2 +1,2 @@
 select * from mobos
-where chipset = ${chipset};
+where socket = ${socket};
