@@ -1,12 +1,15 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import './cpus.css'
+import {Link} from 'react-router-dom';
 
 class Cpus extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cpu_list: []
+      cpu_list: [],
+      cpu_name: '',
+      cpu_socket: '',
     }
   }
 
@@ -18,14 +21,19 @@ class Cpus extends Component {
     })
   }
 
-  select = () => {
-    
+  select = (obj) => {
+    const {socket} = obj
+    axios.post('/api/mobos', {socket}).then(res => {
+      console.log('selected')
+      
+    })
+      
   }
 
   render() {
     let mappedCpus = this.state.cpu_list.map((eachCpuObject) => {
       return(
-        <div className='cpu'>
+        <div className='cpu' key={eachCpuObject.id}>
           <img className='cpu_pic' src={eachCpuObject.image_url} alt='' />
           <div className='textinfo'>
             <p>Brand: {eachCpuObject.brand}</p>
@@ -38,7 +46,7 @@ class Cpus extends Component {
             <p>Cooler Included: {eachCpuObject.cooler_included}</p>
             <p>Price: ${eachCpuObject.price}</p>
           </div>
-          <button onClick={this.select}>Select</button>
+          <Link to='/NewBuild/Motherboards'><button onClick={() => this.select(eachCpuObject)}>Select</button></Link>
         </div>
       )
     })

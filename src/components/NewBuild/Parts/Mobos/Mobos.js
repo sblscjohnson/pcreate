@@ -4,8 +4,12 @@ class Mobos extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mobo_list: []
+      mobo_list: this.props.state
     }
+  }
+
+  componentDidMount() {
+    console.log(JSON.stringify(this.state.mobo_list))
   }
 
   render() {
