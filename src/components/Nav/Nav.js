@@ -32,7 +32,7 @@ class Nav extends Component {
         <nav className='navbar_lines'>
         <Link to='/'><img className='logo' src={pcreate_logo} alt='pcreate' /></Link>
         <div className='small'>
-        <button className='lines' className='hamburger hamburger--vortex' onClick={this.buttonOn} type='button'>
+        <button className='lines, hamburger hamburger--vortex' onClick={this.buttonOn} type='button'>
           <span className="hamburger-box">
             <span className="hamburger-inner"></span>
           </span>
@@ -53,7 +53,7 @@ class Nav extends Component {
       <nav className='navbar_x'>
         <Link to='/'><img className='logo' src={pcreate_logo} alt='pcreate' /></Link>
         <div className='dropdown'>
-        <button className='x' className='hamburger hamburger--vortex is-active' onClick={this.buttonOff} type='button'>
+        <button className='x, hamburger hamburger--vortex is-active' onClick={this.buttonOff} type='button'>
           <span className="hamburger-box">
             <span className="hamburger-inner"></span>
           </span>

@@ -11,7 +11,11 @@ const app = express();
 const {SERVER_PORT, DB_CONNECTION, SESSION_SECRET} = process.env;
 
 app.use(bodyParser.json());
- /* session goes here */
+app.use(session({
+  secret: SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false,
+}));
 
  massive(DB_CONNECTION).then(db => {
    app.set('db', db);

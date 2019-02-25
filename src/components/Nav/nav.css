@@ -7,6 +7,7 @@ a:focus { text-decoration: none; }
 
 .navbar_lines {
   background-color: #bb0000;
+  background-size: cover;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -16,6 +17,7 @@ a:focus { text-decoration: none; }
 
 .navbar_x {
   background-color: #bb0000;
+  background-size: cover;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -60,8 +62,9 @@ a:focus { text-decoration: none; }
   top: 78px;
   right: 0vw;
   width: 40vw;
-  background-color: rgba(98,98,98,.7);
-  color: #E5E5E5;
+  background-color: #A0A0A0;
+  z-index: 2;
+  color: white;
   border-radius: 0px 0px 5px 5px;
 }
 
@@ -83,7 +86,7 @@ a:focus { text-decoration: none; }
   }
   .dropdownItems_notHidden {
     top: 118px;
-    font-size: 4.g5vw;
+    font-size: 4.5vw;
   }
 }
 
@@ -101,7 +104,7 @@ a:focus { text-decoration: none; }
   }
   .normal_nav {
     display: flex;
-    background-color: #E5E5E5;
+    background-color: white;
     position: relative;
     right: 5vw;
     border-radius: 5px;
@@ -111,7 +114,7 @@ a:focus { text-decoration: none; }
     font-size: 2.1vw;
     font-family: 'Rubik', sans-serif;
     margin: 1vw;
-    background-color: rgba(98,98,98,.7);
+    background-color: #A0A0A0;
     padding: .5vw;
     border-radius: 7px;
   }

@@ -1,5 +1,8 @@
+const bcrypt = require('bcryptjs')
+
 module.exports = {
   register: (req, res) => {
+    const {username, password} = req.body
     res.status(201).send('register')
   },
   login: (req, res) => {

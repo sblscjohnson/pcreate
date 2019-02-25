@@ -3,9 +3,18 @@ import React, {Component} from 'react';
 class Account extends Component {
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {
+      username: '',
+      password: ''
+    }
   }
   
+  handleChange = (prop, val) => {
+    this.setState({
+      [prop]: val
+    })
+  }
+
   render() {
     return(
       <div>

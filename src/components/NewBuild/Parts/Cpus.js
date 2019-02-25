@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import './cpus.css'
+import './template.css'
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {updateCpu} from './../../../ducks/reducer';
 
 class Cpus extends Component {
   constructor(props) {
@@ -9,7 +11,9 @@ class Cpus extends Component {
     this.state = {
       cpu_list: [],
       cpu_name: '',
+      cpu_tier: '',
       cpu_socket: '',
+      cpu_image: ''
     }
   }
 
@@ -21,20 +25,17 @@ class Cpus extends Component {
     })
   }
 
-  select = (obj) => {
-    const {socket} = obj
-    axios.post('/api/mobos', {socket}).then(res => {
-      console.log('selected')
-      
-    })
-      
+  selectCpu = () => {
+    console.log(this.state.cpu_list)
+  
   }
-
+  
   render() {
     let mappedCpus = this.state.cpu_list.map((eachCpuObject) => {
+      console.log(eachCpuObject.socket)
       return(
-        <div className='cpu' key={eachCpuObject.id}>
-          <img className='cpu_pic' src={eachCpuObject.image_url} alt='' />
+        <div className='item' key={eachCpuObject.id}>
+          <img className='pic' src={eachCpuObject.image_url} alt={eachCpuObject.name} />
           <div className='textinfo'>
             <p>Brand: {eachCpuObject.brand}</p>
             <p>Name: {eachCpuObject.name}</p>
@@ -43,20 +44,30 @@ class Cpus extends Component {
             <p>Threads: {eachCpuObject.threads}</p>
             <p>Base Frequency: {eachCpuObject.base} Ghz</p>
             <p>Boost Frequency: {eachCpuObject.boost} Ghz</p>
-            <p>Cooler Included: {eachCpuObject.cooler_included}</p>
+            <p>Cooler Included: {eachCpuObject.cooler_included.toString()}</p>
             <p>Price: ${eachCpuObject.price}</p>
           </div>
-          <Link to='/NewBuild/Motherboards'><button onClick={() => this.select(eachCpuObject)}>Select</button></Link>
+          <Link className='button' to='/NewBuild/Motherboards'><button onClick={this.selectCpu}>Select</button></Link>
         </div>
       )
     })
 
     return(
-      <div className='mappedCpus'>
+      <div>
         {mappedCpus}
       </div>
     )
   }
 }
 
-export default Cpus
+const mapStateToProps = () => {
+  return {
+
+  }
+}
+
+const dispatch = {
+  updateCpu
+}
+
+export default connect(mapStateToProps, dispatch)(Cpus)

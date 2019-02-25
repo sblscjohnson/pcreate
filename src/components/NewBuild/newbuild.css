@@ -1,4 +1,19 @@
 .newbuild {
   font-family: 'Rubik', sans-serif;
-  
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  display: flex;
+  flex-direction: row;
+}
+
+.part {
+  display: flex;
+  align-items: center;
+}
+
+.part_img {
+  height: 10vh;
 }

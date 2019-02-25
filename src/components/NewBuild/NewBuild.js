@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import routes from './routes'
-import './newbuild.css'
+import routes from './routes';
+import './newbuild.css';
+import {connect} from 'react-redux';
 
 class NewBuild extends Component {
   constructor(props) {
@@ -12,12 +13,20 @@ class NewBuild extends Component {
   render() {
     return(
       <div className='newbuild'>
-        <Link to='/NewBuild/Cpus'>Cpus</Link>
-        <Link to='/NewBuild/Motherboards'>Motherboards</Link>
+        <div className='top'>
+          <Link className='part' to='/NewBuild/Cpus'>Cpu <img className='part_img' src={this.props.cpu_image} alt={this.props.cpu_name} /></Link>
+          <Link to='/NewBuild/Motherboards'>Motherboard</Link>
+        </div>
         {routes}
       </div>
     )
   }
 }
 
-export default NewBuild; 
+const mapStateToProps = (reduxState) => {
+  return {
+    cpu_image: reduxState.build.cpu_image
+  }
+}
+
+export default connect(mapStateToProps)(NewBuild); 
