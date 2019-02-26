@@ -7,13 +7,30 @@
 .top {
   display: flex;
   flex-direction: row;
+  overflow: scroll;
+  border-bottom: 2px black solid
 }
 
 .part {
   display: flex;
   align-items: center;
+  margin: 2vw;
 }
 
 .part_img {
-  height: 10vh;
+  height: 13vh;
+}
+
+.startbutton {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  border: 2px black solid;
+  background-color: #e1c699;
+  position: relative;
+  width: 40vw;
+  left: 30vw;
+  top: 10vh;
+  border-radius: 5px;
 }

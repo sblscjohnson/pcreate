@@ -16,5 +16,50 @@ module.exports = {
     }).catch((err) => {
       res.status(500).send('get mobos fail', err)
     })
+  },
+  ram: async (req, res) => {
+    console.log(req.body)
+    const {ram_slots} = req.body
+    await req.app.get('db').newBuild.getram({ram_slots: ram_slots}).then((ram) => {
+      res.status(200).send(ram)
+    }).catch((err) => {
+      res.status(500).send('get ram fail', err)
+    })
+  },
+  case: async (req, res) => {
+    console.log(req.body)
+    const {mobo_type} = req.body
+    await req.app.get('db').newBuild.getcase({mobo_type: mobo_type}).then((compcase) => {
+      res.status(200).send(compcase)
+    }).catch((err) => {
+      res.status(500).send('get case fail', err)
+    })
+  },
+  cooler: async (req, res) => {
+    const {socket, max_aio, max_air} = req.body
+    console.log(socket, max_aio, max_air)
+    await req.app.get('db').newBuild.getcooler({socket: socket, max_aio: max_aio, max_air: max_air}).then((cooler) => {
+      res.status(200).send(cooler)
+    }).catch((err) => {
+      res.status(500).send('get cooler fail', err)
+    })
+  },
+  gpu: async (req, res) => {
+    console.log(req.body)
+    const {cpu_tier} = req.body
+    await req.app.get('db').newBuild.getgpu({tier: cpu_tier}).then((gpu) => {
+      res.status(200).send(gpu)
+    }).catch((err) => {
+      res.status(500).send('get gpu fail', err)
+    })
+  },
+  psu: async (req, res) => {
+    console.log(req.body)
+    const {psu_size} = req.body
+    await req.app.get('db').newBuild.getpsu({psu_size: psu_size}).then((psu) => {
+      res.status(200).send(psu)
+    }).catch((err) => {
+      res.status(500).send('get psu fail', err)
+    })
   }
 }

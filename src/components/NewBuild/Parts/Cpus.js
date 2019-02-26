@@ -47,7 +47,7 @@ class Cpus extends Component {
             <p>Cooler Included: {eachCpuObject.cooler_included.toString()}</p>
             <p>Price: ${eachCpuObject.price}</p>
           </div>
-          <Link className='button' to='/NewBuild/Motherboards'><button onClick={this.selectCpu}>Select</button></Link>
+          <Link className='template_button' to='/NewBuild/Motherboards'><button onClick={this.selectCpu}>Select</button></Link>
         </div>
       )
     })

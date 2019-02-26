@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 import './template.css'
 import axios from 'axios';
 
@@ -33,7 +34,7 @@ class Mobos extends Component {
             <p>Ram Slots: {eachMoboObj.ram_slots}</p>
             <p>Price: ${eachMoboObj.price}</p>
           </div>
-          <button className='button'>Select</button>
+          <Link className='template_button' to='/NewBuild/Ram'><button>Select</button></Link>
         </div>
       )
     })

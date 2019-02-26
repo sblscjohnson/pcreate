@@ -32,3 +32,8 @@ app.use(session({
  // new build
  app.get('/api/cpus', newBuild_ctrl.cpus)
  app.post('/api/mobos', newBuild_ctrl.mobos)
+ app.post('/api/ram', newBuild_ctrl.ram)
+ app.post('/api/case', newBuild_ctrl.case)
+ app.post('/api/cooler', newBuild_ctrl.cooler)
+ app.post('/api/gpu', newBuild_ctrl.gpu)
+ app.post('/api/psu', newBuild_ctrl.psu)

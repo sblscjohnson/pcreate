@@ -6,7 +6,7 @@ a:hover { text-decoration: none; }
 a:focus { text-decoration: none; }
 
 .navbar_lines {
-  background-color: #bb0000;
+  background-color: #e1c699;
   background-size: cover;
   display: flex;
   justify-content: flex-end;
@@ -16,7 +16,7 @@ a:focus { text-decoration: none; }
 }
 
 .navbar_x {
-  background-color: #bb0000;
+  background-color: #e1c699;
   background-size: cover;
   display: flex;
   justify-content: flex-end;

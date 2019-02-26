@@ -4,7 +4,7 @@
 }
 
 .item {
-  margin: 2vw;
+  margin: 5vw;
   font-family: 'Rubik', sans-serif;
   border: black 1px solid;
   display: flex;
@@ -21,6 +21,6 @@
   font-size: 3vw;
 }
 
-.button {
+.template_button {
   width: 10%;
 }

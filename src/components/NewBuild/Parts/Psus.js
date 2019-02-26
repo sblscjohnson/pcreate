@@ -5,20 +5,20 @@ import './template.css'
 import axios from 'axios';
 
 
-class Gpus extends Component {
+class Psus extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      gpu_list: []
+      psu_list: []
     }
   }
 
 
     componentDidMount() {
-      const {cpu_tier}  = this.props
-        axios.post('/api/gpu', {cpu_tier}).then(res => {
+      const {psu_size}  = this.props
+        axios.post('/api/psu', {psu_size}).then(res => {
           this.setState({
-            gpu_list: res.data
+            psu_list: res.data
           })
          
         })    
@@ -26,14 +26,14 @@ class Gpus extends Component {
 
 
   render() {
-    let mappedGpus = this.state.gpu_list.map((eachGpuObj) => {
+    let mappedPsus = this.state.psu_list.map((eachPsuObj) => {
       return(
-        <div className='item' key={eachGpuObj.id}>
-          <img className='pic' src={eachGpuObj.image_url} alt={eachGpuObj.name} />
+        <div className='item' key={eachPsuObj.id}>
+          <img className='pic' src={eachPsuObj.image_url} alt={eachPsuObj.name} />
           <div className='textinfo'>
-            <p>Brand: {eachGpuObj.brand}</p>
-            <p>Name: {eachGpuObj.name}</p>
-            <p>Price: ${eachGpuObj.price}</p>
+            <p>Brand: {eachPsuObj.brand}</p>
+            <p>Name: {eachPsuObj.name}</p>
+            <p>Price: ${eachPsuObj.price}</p>
           </div>
           <Link className='template_button' to='/NewBuild/Psus'><button>Select</button></Link>
         </div>
@@ -41,7 +41,7 @@ class Gpus extends Component {
     })
     return(
       <div>
-        {mappedGpus}
+        {mappedPsus}
       </div>
     )
     }
@@ -49,8 +49,8 @@ class Gpus extends Component {
 
 const mapStateToProps = (reduxState) => {
   return {
-    cpu_tier: reduxState.build.cpu_tier
+    psu_size: reduxState.build.psu_size
   }
 }
 
-export default connect(mapStateToProps)(Gpus)
+export default connect(mapStateToProps)(Psus)
