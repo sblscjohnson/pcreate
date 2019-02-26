@@ -1,2 +1,3 @@
 select * from psus
-where size <= ${psu_size};
+where size <= ${psu_size}
+and tier <= ${tier};

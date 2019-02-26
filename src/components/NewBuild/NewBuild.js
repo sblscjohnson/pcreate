@@ -10,19 +10,15 @@ class NewBuild extends Component {
     super(props);
     this.state = {
       button: '',
+      num: 0
     }
   }
 
   componentDidMount() {
-    axios.get('https://api.whatdoestrumpthink.com/api/v1/quotes/random')
-    .then(res => {
       this.setState({
-        button: res.data.message
+        num: 0
       })
-    })
   }
-
-  
   
   render() {
     return(
@@ -36,7 +32,6 @@ class NewBuild extends Component {
           <Link className='part' to='/NewBuild/Gpus'>GPU <img className='part_img' src={this.props.gpu_image} alt={this.props.gpu_name} /></Link>
           <Link className='part' to='/NewBuild/Psus'>PSU <img className='part_img' src={this.props.psu_image} alt={this.props.psu_name} /></Link>
         </div>
-
         {routes}
       </div>
     )
@@ -44,6 +39,7 @@ class NewBuild extends Component {
 }
 
 const mapStateToProps = (reduxState) => {
+    console.log('state build obj', reduxState.build)
     const {cpu_image, mobo_image, case_image, ram_image, psu_image, cooler_image, gpu_image} = reduxState.build
   return {
     cpu_image: cpu_image,

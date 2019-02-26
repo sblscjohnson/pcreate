@@ -9,11 +9,7 @@ class Cpus extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cpu_list: [],
-      cpu_name: '',
-      cpu_tier: '',
-      cpu_socket: '',
-      cpu_image: ''
+      cpu_list: []
     }
   }
 
@@ -24,15 +20,15 @@ class Cpus extends Component {
       })
     })
   }
-
-  selectCpu = () => {
-    console.log(this.state.cpu_list)
   
+  selectCpu(obj) {
+    const {name: cpu_name, tier: cpu_tier, socket, image_url: cpu_image} = obj;
+    console.log(cpu_name, cpu_tier, socket, cpu_image);
+    this.props.updateCpu({cpu_name, cpu_tier, socket, cpu_image})
   }
   
   render() {
     let mappedCpus = this.state.cpu_list.map((eachCpuObject) => {
-      console.log(eachCpuObject.socket)
       return(
         <div className='item' key={eachCpuObject.id}>
           <img className='pic' src={eachCpuObject.image_url} alt={eachCpuObject.name} />
@@ -47,22 +43,16 @@ class Cpus extends Component {
             <p>Cooler Included: {eachCpuObject.cooler_included.toString()}</p>
             <p>Price: ${eachCpuObject.price}</p>
           </div>
-          <Link className='template_button' to='/NewBuild/Motherboards'><button onClick={this.selectCpu}>Select</button></Link>
+          <Link className='template_button' to='/NewBuild/Motherboards'><p onClick={() => this.selectCpu(eachCpuObject)}>Select</p></Link>
         </div>
       )
     })
 
     return(
-      <div>
+      <div className='lowerpart'>
         {mappedCpus}
       </div>
     )
-  }
-}
-
-const mapStateToProps = () => {
-  return {
-
   }
 }
 
@@ -70,4 +60,4 @@ const dispatch = {
   updateCpu
 }
 
-export default connect(mapStateToProps, dispatch)(Cpus)
+export default connect(null, dispatch)(Cpus)

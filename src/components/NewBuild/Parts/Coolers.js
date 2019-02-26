@@ -35,12 +35,12 @@ class Coolers extends Component {
             <p>Name: {eachCoolerObj.name}</p>
             <p>Price: ${eachCoolerObj.price}</p>
           </div>
-          <Link className='template_button' to='/NewBuild/Gpus'><button>Select</button></Link>
+          <Link className='template_button' to='/NewBuild/Gpus'><p>Select</p></Link>
         </div>
       )
     })
     return(
-      <div>
+      <div className='lowerpart'>
         {mappedCoolers}
       </div>
     )

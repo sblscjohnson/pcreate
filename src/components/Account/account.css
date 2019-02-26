@@ -9,7 +9,7 @@
   left: 20vw;
   font-family: 'Rubik', sans-serif;
   top: 20vh;
-  background-color: #e1c699;
+  background-color: #fedcd2;
 }
 
 .textbox {
@@ -31,8 +31,9 @@
   align-items: center;
   justify-content: center;
   margin: 3vw;
-  background-color: #A0A0A0;
+  background-color: #bfd8d2;
   padding: .5vw;
   border-radius: 7px;
   text-align: center;
+  border: 2px black solid;
 }

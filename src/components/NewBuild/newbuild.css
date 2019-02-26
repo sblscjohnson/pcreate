@@ -8,7 +8,8 @@
   display: flex;
   flex-direction: row;
   overflow: scroll;
-  border-bottom: 2px black solid
+  border-bottom: 2px black solid;
+  background-color: white;
 }
 
 .part {
@@ -19,6 +20,7 @@
 
 .part_img {
   height: 13vh;
+  margin-left: 2vw;
 }
 
 .startbutton {
@@ -27,10 +29,11 @@
   text-align: center;
   align-items: center;
   border: 2px black solid;
-  background-color: #e1c699;
+  background-color: #bfd8d2;
   position: relative;
   width: 40vw;
   left: 30vw;
   top: 10vh;
   border-radius: 5px;
+  border: 2px black solid;
 }

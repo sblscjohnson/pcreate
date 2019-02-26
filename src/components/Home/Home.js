@@ -27,7 +27,6 @@ class Home extends Component {
   render() {
     return(
       <div className='homePage'>
-        JUST END ME PLZ
         <p>{this.state.desc}</p>
       </div>
     )

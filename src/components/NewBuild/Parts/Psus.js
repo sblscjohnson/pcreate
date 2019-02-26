@@ -15,8 +15,8 @@ class Psus extends Component {
 
 
     componentDidMount() {
-      const {psu_size}  = this.props
-        axios.post('/api/psu', {psu_size}).then(res => {
+      const {psu_size, cpu_tier}  = this.props
+        axios.post('/api/psu', {psu_size, cpu_tier}).then(res => {
           this.setState({
             psu_list: res.data
           })
@@ -35,12 +35,12 @@ class Psus extends Component {
             <p>Name: {eachPsuObj.name}</p>
             <p>Price: ${eachPsuObj.price}</p>
           </div>
-          <Link className='template_button' to='/NewBuild/Psus'><button>Select</button></Link>
+          <Link className='template_button' to='/NewBuild/Psus'><p>Select</p></Link>
         </div>
       )
     })
     return(
-      <div>
+      <div className='lowerpart'>
         {mappedPsus}
       </div>
     )
@@ -48,8 +48,10 @@ class Psus extends Component {
 }
 
 const mapStateToProps = (reduxState) => {
+  const {psu_size, cpu_tier} = reduxState.build
   return {
-    psu_size: reduxState.build.psu_size
+    psu_size: psu_size,
+    cpu_tier: cpu_tier
   }
 }
 

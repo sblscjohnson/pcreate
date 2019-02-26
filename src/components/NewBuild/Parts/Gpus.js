@@ -35,12 +35,12 @@ class Gpus extends Component {
             <p>Name: {eachGpuObj.name}</p>
             <p>Price: ${eachGpuObj.price}</p>
           </div>
-          <Link className='template_button' to='/NewBuild/Psus'><button>Select</button></Link>
+          <Link className='template_button' to='/NewBuild/Psus'><p>Select</p></Link>
         </div>
       )
     })
     return(
-      <div>
+      <div className='lowerpart'>
         {mappedGpus}
       </div>
     )

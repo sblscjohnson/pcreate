@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import './template.css'
 import axios from 'axios';
+import {updateMobo} from './../../../ducks/reducer';
 
 class Mobos extends Component {
   constructor(props) {
@@ -21,6 +22,10 @@ class Mobos extends Component {
       })    
     }
 
+  selectMobo(obj) {
+    const {name: mobo_name, type: mobo_type, ram_slots, image_url: mobo_image} = obj
+    this.props.updateMobo({mobo_name, mobo_type, ram_slots, mobo_image})
+  }
 
   render() {
     let mappedMobos = this.state.mobo_list.map((eachMoboObj) => {
@@ -34,12 +39,12 @@ class Mobos extends Component {
             <p>Ram Slots: {eachMoboObj.ram_slots}</p>
             <p>Price: ${eachMoboObj.price}</p>
           </div>
-          <Link className='template_button' to='/NewBuild/Ram'><button>Select</button></Link>
+          <Link className='template_button' to='/NewBuild/Ram' onClick={() => this.selectMobo(eachMoboObj)}><p>Select</p></Link>
         </div>
       )
     })
     return(
-      <div>
+      <div className='lowerpart'>
         {mappedMobos}
       </div>
     )
@@ -52,4 +57,8 @@ const mapStateToProps = (reduxState) => {
   }
 }
 
-export default connect(mapStateToProps)(Mobos)
+const dispatch = {
+  updateMobo
+}
+
+export default connect(mapStateToProps, dispatch)(Mobos)

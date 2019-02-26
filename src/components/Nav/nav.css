@@ -6,7 +6,7 @@ a:hover { text-decoration: none; }
 a:focus { text-decoration: none; }
 
 .navbar_lines {
-  background-color: #e1c699;
+  background-color: #df744a;
   background-size: cover;
   display: flex;
   justify-content: flex-end;
@@ -16,7 +16,7 @@ a:focus { text-decoration: none; }
 }
 
 .navbar_x {
-  background-color: #e1c699;
+  background-color: #df744a;
   background-size: cover;
   display: flex;
   justify-content: flex-end;
@@ -62,7 +62,7 @@ a:focus { text-decoration: none; }
   top: 78px;
   right: 0vw;
   width: 40vw;
-  background-color: #A0A0A0;
+  background-color: #fedcd2;
   z-index: 2;
   color: white;
   border-radius: 0px 0px 5px 5px;
@@ -114,7 +114,8 @@ a:focus { text-decoration: none; }
     font-size: 2.1vw;
     font-family: 'Rubik', sans-serif;
     margin: 1vw;
-    background-color: #A0A0A0;
+    background-color: #fedcd2;
+    border: 2px black solid;
     padding: .5vw;
     border-radius: 7px;
   }

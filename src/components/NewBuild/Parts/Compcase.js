@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import './template.css'
 import axios from 'axios';
+import {updateCase} from './../../../ducks/reducer';
 
 class Compcase extends Component {
   constructor(props) {
@@ -21,6 +22,10 @@ class Compcase extends Component {
       })    
     }
 
+  setCase(obj) {
+    const {name, image_url, max_aio, max_air, psu_size} = obj;
+    this.props.updateCase({case_name: name, case_image: image_url, max_aio, max_air, psu_size})
+  }
 
   render() {
     let mappedCases = this.state.case_list.map((eachCaseObj) => {
@@ -32,12 +37,12 @@ class Compcase extends Component {
             <p>Name: {eachCaseObj.name}</p>
             <p>Price: ${eachCaseObj.price}</p>
           </div>
-          <Link className='template_button' to='/NewBuild/Coolers'><button>Select</button></Link>
+          <Link className='template_button' to='/NewBuild/Coolers' onClick={() => this.setCase(eachCaseObj)}><p>Select</p></Link>
         </div>
       )
     })
     return(
-      <div>
+      <div className='lowerpart'>
         {mappedCases}
       </div>
     )
@@ -50,4 +55,8 @@ const mapStateToProps = (reduxState) => {
   }
 }
 
-export default connect(mapStateToProps)(Compcase)
+const dispatch = {
+  updateCase
+}
+
+export default connect(mapStateToProps, dispatch)(Compcase)

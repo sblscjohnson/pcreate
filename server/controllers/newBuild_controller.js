@@ -55,8 +55,8 @@ module.exports = {
   },
   psu: async (req, res) => {
     console.log(req.body)
-    const {psu_size} = req.body
-    await req.app.get('db').newBuild.getpsu({psu_size: psu_size}).then((psu) => {
+    const {psu_size, cpu_tier} = req.body
+    await req.app.get('db').newBuild.getpsu({psu_size, tier: cpu_tier}).then((psu) => {
       res.status(200).send(psu)
     }).catch((err) => {
       res.status(500).send('get psu fail', err)

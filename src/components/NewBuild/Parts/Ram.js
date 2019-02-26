@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import './template.css'
 import axios from 'axios';
+import {updateRam} from './../../../ducks/reducer';
 
 class Ram extends Component {
   constructor(props) {
@@ -22,6 +23,10 @@ class Ram extends Component {
       })    
     }
 
+  selectRam(obj) {
+    const {name, image_url} = obj
+    this.props.updateRam({ram_name: name, ram_image: image_url})
+  }
 
   render() {
     let mappedRam = this.state.ram_list.map((eachRamObj) => {
@@ -31,16 +36,17 @@ class Ram extends Component {
           <div className='textinfo'>
             <p>Brand: {eachRamObj.brand}</p>
             <p>Name: {eachRamObj.name}</p>
-            <p>Size: {eachRamObj.size}</p>
-            <p>Ram Slots: {eachRamObj.ram_slots}</p>
+            <p>Size: {eachRamObj.size} GB</p>
+            <p>Number of DIMMs: {eachRamObj.dimms}</p>
             <p>Price: ${eachRamObj.price}</p>
+            <p>Color: {eachRamObj.color}</p>
           </div>
-          <Link className='template_button' to='/NewBuild/Cases'><button>Select</button></Link>
+          <Link className='template_button' to='/NewBuild/Cases' onClick={() => this.selectRam(eachRamObj)}><p>Select</p></Link>
         </div>
       )
     })
     return(
-      <div>
+      <div className='lowerpart'>
         {mappedRam}
       </div>
     )
@@ -53,4 +59,8 @@ const mapStateToProps = (reduxState) => {
   }
 }
 
-export default connect(mapStateToProps)(Ram)
+const dispatch = {
+  updateRam
+}
+
+export default connect(mapStateToProps, dispatch)(Ram)
