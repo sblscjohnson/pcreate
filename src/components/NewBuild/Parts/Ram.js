@@ -24,8 +24,8 @@ class Ram extends Component {
     }
 
   selectRam(obj) {
-    const {name, image_url} = obj
-    this.props.updateRam({ram_name: name, ram_image: image_url})
+    const {brand: ram_brand, size: ram_size, speed: ram_speed, price: ram_price, name, image_url} = obj
+    this.props.updateRam({ram_brand, ram_size, ram_speed, ram_price, ram_name: name, ram_image: image_url})
   }
 
   render() {

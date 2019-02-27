@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import './template.css'
 import axios from 'axios';
-
+import {updatePsu} from './../../../ducks/reducer';
 
 class Psus extends Component {
   constructor(props) {
@@ -24,6 +24,10 @@ class Psus extends Component {
         })    
       }
 
+  setPsu(obj) {
+    const {brand: psu_brand, price: psu_price, efficency: psu_efficency, name: psu_name, image_url: psu_image} = obj
+    this.props.updatePsu({psu_brand, psu_price, psu_efficency, psu_name, psu_image})
+  }
 
   render() {
     let mappedPsus = this.state.psu_list.map((eachPsuObj) => {
@@ -35,7 +39,7 @@ class Psus extends Component {
             <p>Name: {eachPsuObj.name}</p>
             <p>Price: ${eachPsuObj.price}</p>
           </div>
-          <Link className='template_button' to='/NewBuild/Psus'><p>Select</p></Link>
+          <Link className='template_button' to='/NewBuild/Complete' onClick={() => this.setPsu(eachPsuObj)}><p>Select</p></Link>
         </div>
       )
     })
@@ -55,4 +59,8 @@ const mapStateToProps = (reduxState) => {
   }
 }
 
-export default connect(mapStateToProps)(Psus)
+const dispatch = {
+  updatePsu
+}
+
+export default connect(mapStateToProps, dispatch)(Psus)

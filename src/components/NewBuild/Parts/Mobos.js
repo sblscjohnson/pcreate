@@ -23,8 +23,8 @@ class Mobos extends Component {
     }
 
   selectMobo(obj) {
-    const {name: mobo_name, type: mobo_type, ram_slots, image_url: mobo_image} = obj
-    this.props.updateMobo({mobo_name, mobo_type, ram_slots, mobo_image})
+    const {brand: mobo_brand, price: mobo_price, name: mobo_name, size: mobo_size, type: mobo_type, ram_slots, image_url: mobo_image} = obj
+    this.props.updateMobo({mobo_brand, mobo_price, mobo_name, mobo_type, mobo_size, ram_slots, mobo_image})
   }
 
   render() {

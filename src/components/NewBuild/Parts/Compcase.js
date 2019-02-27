@@ -23,8 +23,8 @@ class Compcase extends Component {
     }
 
   setCase(obj) {
-    const {name, image_url, max_aio, max_air, psu_size} = obj;
-    this.props.updateCase({case_name: name, case_image: image_url, max_aio, max_air, psu_size})
+    const {brand: case_brand, size: case_size, price: case_price, name, image_url, max_aio, max_air, psu_size} = obj;
+    this.props.updateCase({case_brand, case_size, case_price, case_name: name, case_image: image_url, max_aio, max_air, psu_size})
   }
 
   render() {

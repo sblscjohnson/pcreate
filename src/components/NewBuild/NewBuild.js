@@ -31,6 +31,7 @@ class NewBuild extends Component {
           <Link className='part' to='/NewBuild/Coolers'>Cooler <img className='part_img' src={this.props.cooler_image} alt={this.props.cooler_name} /></Link>
           <Link className='part' to='/NewBuild/Gpus'>GPU <img className='part_img' src={this.props.gpu_image} alt={this.props.gpu_name} /></Link>
           <Link className='part' to='/NewBuild/Psus'>PSU <img className='part_img' src={this.props.psu_image} alt={this.props.psu_name} /></Link>
+          <Link className='part' to='/NewBuild/Complete'>Complete</Link>
         </div>
         {routes}
       </div>

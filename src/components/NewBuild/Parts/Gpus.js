@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import './template.css'
 import axios from 'axios';
-
+import {updateGpu} from './../../../ducks/reducer';
 
 class Gpus extends Component {
   constructor(props) {
@@ -24,6 +24,10 @@ class Gpus extends Component {
         })    
       }
 
+  setGpu(obj) {
+    const {brand: gpu_brand, price: gpu_price, name: gpu_name, image_url: gpu_image} = obj
+    this.props.updateGpu({gpu_brand, gpu_price, gpu_name, gpu_image})
+  }
 
   render() {
     let mappedGpus = this.state.gpu_list.map((eachGpuObj) => {
@@ -35,7 +39,7 @@ class Gpus extends Component {
             <p>Name: {eachGpuObj.name}</p>
             <p>Price: ${eachGpuObj.price}</p>
           </div>
-          <Link className='template_button' to='/NewBuild/Psus'><p>Select</p></Link>
+          <Link className='template_button' to='/NewBuild/Psus' onClick={() => this.setGpu(eachGpuObj)}><p>Select</p></Link>
         </div>
       )
     })
@@ -53,4 +57,8 @@ const mapStateToProps = (reduxState) => {
   }
 }
 
-export default connect(mapStateToProps)(Gpus)
+const dispatch = {
+  updateGpu
+}
+
+export default connect(mapStateToProps, dispatch)(Gpus)

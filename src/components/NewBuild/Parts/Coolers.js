@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import './template.css'
 import axios from 'axios';
+import {updateCooler} from './../../../ducks/reducer';
+
 
 
 class Coolers extends Component {
@@ -24,6 +26,10 @@ class Coolers extends Component {
         })    
       }
 
+  setCooler(obj) {
+    const {brand: cooler_brand, price: cooler_price, name: cooler_name, image_url: cooler_image} = obj
+    this.props.updateCooler({cooler_brand, cooler_price, cooler_name, cooler_image})
+  }
 
   render() {
     let mappedCoolers = this.state.cooler_list.map((eachCoolerObj) => {
@@ -35,7 +41,7 @@ class Coolers extends Component {
             <p>Name: {eachCoolerObj.name}</p>
             <p>Price: ${eachCoolerObj.price}</p>
           </div>
-          <Link className='template_button' to='/NewBuild/Gpus'><p>Select</p></Link>
+          <Link className='template_button' to='/NewBuild/Gpus' onClick={() => this.setCooler(eachCoolerObj)}><p>Select</p></Link>
         </div>
       )
     })
@@ -56,4 +62,8 @@ const mapStateToProps = (reduxState) => {
   }
 }
 
-export default connect(mapStateToProps)(Coolers)
+const dispatch = {
+  updateCooler
+}
+
+export default connect(mapStateToProps, dispatch)(Coolers)

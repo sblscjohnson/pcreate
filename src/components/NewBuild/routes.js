@@ -7,6 +7,7 @@ import Coolers from './Parts/Coolers'
 import Compcase from './Parts/Compcase';
 import Gpus from './Parts/Gpus';
 import Psus from './Parts/Psus';
+import Complete from './Parts/Complete'
 
 export default(
   <Switch>
@@ -17,5 +18,6 @@ export default(
     <Route path='/NewBuild/Coolers' component={Coolers} />
     <Route path='/NewBuild/Gpus' component={Gpus} />
     <Route path='/NewBuild/Psus' component={Psus} />
+    <Route path='/NewBuild/Complete' component={Complete} />
   </Switch>
 ) 
