@@ -4,6 +4,8 @@ import {Link} from 'react-router-dom';
 import routes from './../../routes';
 import './../../resources/hamburgers.css'
 import './nav.css';
+import {connect} from 'react-redux'
+import blank_profile_pic from './../../resources/images/blank_profile_pic.png';
 
 class Nav extends Component {
   constructor(props) {
@@ -31,6 +33,11 @@ class Nav extends Component {
       <div>
         <nav className='navbar_lines'>
         <Link to='/'><img className='logo' src={pcreate_logo} alt='pcreate' /></Link>
+        {
+          (this.props.profile_pic)
+          ?<img className='profile_pic' src={this.props.profile_pic} alt='' />
+          :<img className='profile_pic' src={blank_profile_pic} alt='' />
+        }
         <div className='small'>
         <button className='lines, hamburger hamburger--vortex' onClick={this.buttonOn} type='button'>
           <span className="hamburger-box">
@@ -52,6 +59,11 @@ class Nav extends Component {
         <div>
       <nav className='navbar_x'>
         <Link to='/'><img className='logo' src={pcreate_logo} alt='pcreate' /></Link>
+        {
+          (this.props.profile_pic)
+          ?<img className='profile_pic' src={this.props.profile_pic} alt='' />
+          :<img className='profile_pic' src={blank_profile_pic} alt='' />
+        }
         <div className='dropdown'>
         <button className='x, hamburger hamburger--vortex is-active' onClick={this.buttonOff} type='button'>
           <span className="hamburger-box">
@@ -72,4 +84,10 @@ class Nav extends Component {
   }}
 }
 
-export default Nav
+const mapStateToProps = (reduxState) => {
+  return {
+    profile_pic: reduxState.user.pic_link
+  }
+}
+
+export default connect(mapStateToProps)(Nav);

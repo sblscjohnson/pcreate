@@ -1,18 +1,44 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
 
 class CompletedBuilds extends Component {
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {
+      email: ''
+    }
+  }
+
+  componentDidMount() {
+    console.log('email', this.props.email)
+    this.setState({
+      email: this.props.email
+    })
   }
   
   render() {
-    return(
-      <div>
-        Completed Builds
-      </div>
-    )
+    if(this.props.email) {
+      return(
+        <div>
+          Completed Builds
+        </div>
+      )
+    } else {
+      return(
+        <div>
+          <Link to='/Account'>Click here to Login/Register!</Link>
+        </div>
+      )
+    }
   }
 }
 
-export default CompletedBuilds;
+const mapStateToProps = (reduxState) => {
+  console.log(reduxState.user)
+  return {
+    email: reduxState.user.email
+  }
+}
+
+export default connect(mapStateToProps)(CompletedBuilds);

@@ -3,7 +3,7 @@ insert into pcreate_users(
   hash,
   pic_link
 ) values(
-  ${username},
+  ${email},
   ${hash},
   ${pic_link}
 ) returning *;

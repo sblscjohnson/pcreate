@@ -48,7 +48,11 @@ const initialState = {
     psu_price: 70,
     psu_image: 'https://images-na.ssl-images-amazon.com/images/I/51bHLROlXRL.jpg',
   },
-  user: {}
+  user: {
+    id: 1,
+    email: '123enough4me@mail.com',
+    pic_link: 'https://robohash.org/1'
+  }
 };
 
 const UPDATE_CPU = 'UPDATE_CPU';
@@ -207,9 +211,9 @@ export default function reducer(state=initialState, action) {
     }};
 
 
-    // case UPDATE_USER:
-    // const {id, username, profile_pic} = payload;
-    // return {...state.user, id, username, profile_pic}
+    case UPDATE_USER:
+    const {id, email, pic_link} = payload;
+    return {...state, user: {id, email, pic_link}}
 
     default:
     return state;

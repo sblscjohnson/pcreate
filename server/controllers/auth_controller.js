@@ -1,14 +1,35 @@
 const bcrypt = require('bcryptjs')
 
 module.exports = {
-  register: (req, res) => {
-    const {username, password} = req.body
-    res.status(201).send('register')
+  register: async (req, res) => {
+    const {email, password, pic_link} = req.body;
+    const {session} = req;
+    const db = req.app.get('db');
+    const salt = bcrypt.genSaltSync(10);
+    const hash = bcrypt.hashSync(password, salt);
+    const newUser = await db.user.register({email: email, hash: hash, pic_link: pic_link})
+    session.user = {...newUser}
+    res.status(201).send(session.user)
   },
-  login: (req, res) => {
-    res.status(200).send('login')
+  login: async (req,res) => {
+    console.log('login hit', req.body)
+    const {email, password} = req.body;
+    const {session} = req
+    const db = req.app.get('db')
+    let user = await db.user.login({email: email})
+    user = user[0]
+    console.log({user})
+    const foundItem = bcrypt.compareSync(password, user.password);
+    if(foundItem) {
+      delete user.password
+      session.user = user
+      res.status(200).send(session.user)
+    } else {
+      res.sendStatus(401)
+    }
   },
   logout: (req, res) => {
-    res.status(200).send('logout')
+    req.session.destroy();
+    res.sendStatus(200);
   },
 }

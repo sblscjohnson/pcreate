@@ -72,6 +72,16 @@ a:focus { text-decoration: none; }
   display: none;
 }
 
+.profile_pic {
+  background-color: white;
+  border-radius: 50%;
+  width: 16vw;
+  height: 16vw;
+  position: absolute;
+  right: 42vw;
+
+}
+
 @media (min-width: 600px) {
   .navbar_lines {
     height: 120px;
