@@ -37,3 +37,38 @@
   text-align: center;
   border: 2px black solid;
 }
+.pic {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Rubik', sans-serif;
+  
+}
+
+.drop {
+  width: 50vw;
+  height: 50vw;
+  border-radius: 50%;
+  border: 2px black solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropwords {
+  background-color: grey;
+  color: white;
+  padding: 5px;
+  border: 1px black solid
+}
+
+.profpic {
+  width: 50vw;
+  height: 50vw;
+  border-radius: 50%;
+  border: 2px black solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

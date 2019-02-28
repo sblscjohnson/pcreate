@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios';
 import {updateUser} from './../../../ducks/reducer';
+import './../account.css'
 
 import { v4 as randomString } from 'uuid';
 import Dropzone from 'react-dropzone';
@@ -48,7 +49,9 @@ class Private extends Component {
     axios
     .put(signedRequest, file, options)
     .then(response => {
-        this.setState({ isUploading: false, url });
+      console.log(url)
+      this.props.updateUser({pic_link: url})
+      this.setState({ isUploading: false, url });
         // THEN DO SOMETHING WITH THE URL. SEND TO DB USING POST REQUEST OR SOMETHING
       })
       .catch(err => {
@@ -70,18 +73,18 @@ class Private extends Component {
   render() {
     const { url, isUploading } = this.state;
     return (
-      <div className="App">
-        <h1>Upload</h1>
-        <h1>{url}</h1>
-        <img src={url} alt="" width="450px" />
+      <div className="pic">
+        {/* <h1>{url}</h1> */}
 
         <Dropzone
+        className='drop'
           onDropAccepted={this.getSignedRequest}
           accept="image/*"
           multiple={false}
-        >
-          {isUploading ? <GridLoader /> : <p>Drop File or Click Here</p>}
+          >
+          {isUploading ? <GridLoader /> : <div><img className='profpic' src={this.props.profile_pic} alt='' /><p className='dropwords'>Edit Profile Pic</p></div>}
         </Dropzone>
+          
       </div>
     );
   }
@@ -96,4 +99,8 @@ const mapStateToProps = (reduxState) => {
   }
 }
 
-export default connect(mapStateToProps)(Private);
+const dispatch = {
+  updateUser
+}
+
+export default connect(mapStateToProps, dispatch)(Private);
