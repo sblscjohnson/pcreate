@@ -17,7 +17,7 @@ class Account extends Component {
     const {id} = this.props
     console.log('id', id)
     if(id) {
-      this.props.history.push('/Private')
+      // this.props.history.push('/Private')
     }
   }
 
@@ -37,7 +37,7 @@ class Account extends Component {
       const {email, profile_pic} = res.data[0]
       this.props.updateUser(res.data[0])
       console.log('new', this.props.id)
-      this.props.history.push('/Private')
+      // this.props.history.push('/Private')
     })
     this.setState({
       email: '',
@@ -53,7 +53,7 @@ class Account extends Component {
      axios.post('/auth/login', {email, password})
      .then(res => { 
          this.props.updateUser(res.data[0]);
-         this.props.history.push('/Private')       
+        //  this.props.history.push('/Private')       
      }).catch(err => {
          console.log(err)
      })
