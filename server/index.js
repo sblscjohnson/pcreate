@@ -8,7 +8,10 @@ const newBuild_ctrl = require('./controllers/newBuild_controller');
 const compBuild_ctrl = require('./controllers/completedBuilds_controller');
 
 const app = express();
-const {SERVER_PORT, DB_CONNECTION, SESSION_SECRET} = process.env;
+
+const aws = require('aws-sdk');
+
+const {SERVER_PORT, DB_CONNECTION, SESSION_SECRET, S3_BUCKET, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY} = process.env;
 
 app.use(bodyParser.json());
 app.use(session({
@@ -37,3 +40,37 @@ app.use(session({
  app.post('/api/cooler', newBuild_ctrl.cooler)
  app.post('/api/gpu', newBuild_ctrl.gpu)
  app.post('/api/psu', newBuild_ctrl.psu)
+
+ // S3
+
+ app.get('/api/signs3', (req, res) => {
+  aws.config = {
+    region: 'us-west-2',
+    accessKeyId: AWS_ACCESS_KEY_ID,
+    secretAccessKey: AWS_SECRET_ACCESS_KEY,
+  };
+
+  const s3 = new aws.S3();
+  const fileName = req.query['file-name'];
+  const fileType = req.query['file-type'];
+  const s3Params = {
+    Bucket: S3_BUCKET,
+    Key: fileName,
+    Expires: 60,
+    ContentType: fileType,
+    ACL: 'public-read',
+  };
+
+  s3.getSignedUrl('putObject', s3Params, (err, data) => {
+    if (err) {
+      console.log(err);
+      return res.end();
+    }
+    const returnData = {
+      signedRequest: data,
+      url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`,
+    };
+
+    return res.send(returnData);
+  });
+});

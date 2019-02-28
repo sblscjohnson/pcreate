@@ -49,9 +49,9 @@ const initialState = {
     psu_image: 'https://images-na.ssl-images-amazon.com/images/I/51bHLROlXRL.jpg',
   },
   user: {
-    id: 1,
-    email: '123enough4me@mail.com',
-    pic_link: 'https://robohash.org/1'
+    id: null,
+    email: '',
+    pic_link: ''
   }
 };
 

@@ -19,10 +19,11 @@ module.exports = {
     let user = await db.user.login({email: email})
     user = user[0]
     console.log({user})
-    const foundItem = bcrypt.compareSync(password, user.password);
+    const foundItem = bcrypt.compareSync(password, user.hash);
     if(foundItem) {
       delete user.password
       session.user = user
+      console.log('sesh usr', session.user)
       res.status(200).send(session.user)
     } else {
       res.sendStatus(401)

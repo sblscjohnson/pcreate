@@ -13,11 +13,11 @@ class Account extends Component {
     }
   }
   
-  componentDidUpdate() {
+  componentDidMount() {
     const {id} = this.props
     console.log('id', id)
     if(id) {
-      this.props.history.push('/private')
+      this.props.history.push('/Private')
     }
   }
 
@@ -28,24 +28,32 @@ class Account extends Component {
   }
 
   register = () => {
+    if(this.state.email && this.state.password){
     const {email, password} = this.state;
     console.log(email, password)
     axios.post('/auth/register', {email, password})
     .then(res => {
-      this.props.updateUser(res.data)
-      this.props.history.push('/private')
+      console.log('res data', res.data[0].id)
+      const {email, profile_pic} = res.data[0]
+      this.props.updateUser(res.data[0])
+      console.log('new', this.props.id)
+      this.props.history.push('/Private')
     })
     this.setState({
       email: '',
       password: '',
     })
+  } else {
+    alert('Login with Email and Password')
   }
-  login() {
+  }
+
+  login = () => {
     const {email, password} = this.state;
      axios.post('/auth/login', {email, password})
      .then(res => { 
-         this.props.updateUser(res.data);
-         this.props.history.push('/private');
+         this.props.updateUser(res.data[0]);
+         this.props.history.push('/Private')       
      }).catch(err => {
          console.log(err)
      })
@@ -58,7 +66,7 @@ class Account extends Component {
         <input className='textbox' value={this.state.email} type='email' onChange={e => this.handleChange('email', e.target.value)} placeholder='email' />
         <input className='textbox' value={this.state.password} type='password' onChange={e => this.handleChange('password', e.target.value)} placeholder='password' />
         <button className='button' onClick={this.register}>Register</button>
-        <button className='button'>Login</button>
+        <button className='button' onClick={this.login}>Login</button>
       </div>
     )
   }
