@@ -12,6 +12,6 @@ export default(
     <Route path='/NewBuild' component={NewBuild} />
     <Route path='/CompletedBuilds' component={CompletedBuilds} />
     <Route path='/Account' component={Account} />
-    <Route exact path='/Private' component={Private} />
+    {/* <Route exact path='/Private' component={Private} /> */}
   </Switch>
 ) 
