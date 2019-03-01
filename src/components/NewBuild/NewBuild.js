@@ -4,6 +4,7 @@ import routes from './routes';
 import './newbuild.css';
 import {connect} from 'react-redux';
 import axios from 'axios';
+import {HashRouter} from 'react-router-dom'
 
 class NewBuild extends Component {
   constructor(props) {
@@ -15,9 +16,7 @@ class NewBuild extends Component {
   }
 
   componentDidMount() {
-      this.setState({
-        num: 0
-      })
+      console.log('new build plz work')
   }
   
   render() {
@@ -31,7 +30,7 @@ class NewBuild extends Component {
           <Link className='part' to='/NewBuild/Coolers'>Cooler <img className='part_img' src={this.props.cooler_image} alt={this.props.cooler_name} /></Link>
           <Link className='part' to='/NewBuild/Gpus'>GPU <img className='part_img' src={this.props.gpu_image} alt={this.props.gpu_name} /></Link>
           <Link className='part' to='/NewBuild/Psus'>PSU <img className='part_img' src={this.props.psu_image} alt={this.props.psu_name} /></Link>
-          <Link className='part' to='/NewBuild/Complete'>Complete</Link>
+          <Link className='part complete' to='/NewBuild/Complete'>Complete</Link>
         </div>
         {routes}
       </div>

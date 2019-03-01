@@ -62,7 +62,7 @@ a:focus { text-decoration: none; }
   top: 78px;
   right: 0vw;
   width: 40vw;
-  background-color: #fedcd2;
+  background-color: #bfd8d2;
   z-index: 2;
   color: white;
   border-radius: 0px 0px 5px 5px;
@@ -75,11 +75,11 @@ a:focus { text-decoration: none; }
 .profile_pic {
   background-color: white;
   border-radius: 50%;
-  width: 16vw;
-  height: 16vw;
-  position: absolute;
-  right: 42vw;
-
+  height: 60px;
+  /* position: absolute; */
+  display: block;
+  padding: auto;
+  width: 60px;
 }
 
 @media (min-width: 600px) {
@@ -97,6 +97,10 @@ a:focus { text-decoration: none; }
   .dropdownItems_notHidden {
     top: 118px;
     font-size: 4.5vw;
+  }
+  .profile_pic {
+    height: 100px;
+    width: 100px;
   }
 }
 
@@ -128,5 +132,9 @@ a:focus { text-decoration: none; }
     border: 2px black solid;
     padding: .5vw;
     border-radius: 7px;
+  }
+  .profile_pic {
+    position: relative;
+    right: 6vw;
   }
 }

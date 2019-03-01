@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import {HashRouter as Router} from 'react-router-dom';
+import {HashRouter} from 'react-router-dom';
 import './resources/reset.css';
 import Nav from './components/Nav/Nav';
 import {Provider} from 'react-redux';
 import store from './ducks/store';
+import routes from './routes'
 
 
 class App extends Component {
@@ -11,7 +12,12 @@ class App extends Component {
     return (
       <div className="App">
         <Provider store={store}>
-          <Router><Nav /></Router>
+          <HashRouter>
+            <div>
+            <Nav />
+            {routes}
+            </div>
+          </HashRouter>
         </Provider>
       </div>
     );

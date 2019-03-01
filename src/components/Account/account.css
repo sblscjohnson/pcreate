@@ -8,7 +8,7 @@
   position: relative;
   left: 20vw;
   font-family: 'Rubik', sans-serif;
-  top: 20vh;
+  top: 15vh;
   background-color: #fedcd2;
 }
 
@@ -32,18 +32,25 @@
   justify-content: center;
   margin: 3vw;
   background-color: #bfd8d2;
-  padding: .5vw;
+  padding: auto;
   border-radius: 7px;
   text-align: center;
   border: 2px black solid;
 }
+
+.bigpic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Rubik', sans-serif;
+}
+
 .pic {
   display: flex;
   text-align: center;
   flex-direction: column;
   justify-content: center;
-  font-family: 'Rubik', sans-serif;
-  
 }
 
 .drop {
@@ -51,24 +58,57 @@
   height: 50vw;
   border-radius: 50%;
   border: 2px black solid;
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
 .dropwords {
-  background-color: grey;
+  background-color: #bfd8d2;
   color: white;
   padding: 5px;
-  border: 1px black solid
+  border: 1px black dashed;
+  text-align: center;
+  padding: 3vw;
+  margin-bottom: 5vh;
 }
 
-.profpic {
-  width: 50vw;
-  height: 50vw;
-  border-radius: 50%;
-  border: 2px black solid;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@media (min-width: 600px) {
+  .drop {
+    width: 25vw;
+    height: 25vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  .login {
+    width: 26vw;
+    left: 37vw;
+    height: 44vh;
+  }
+  .textbox {
+    width: 65%;
+    height: 6%;
+    font-size: 16px;
+    padding: 5%;
+  }
+  .button {
+    height: 10%;
+    width: 28%;
+    font-size: 22px;
+    margin: 8px;
+  }
+  .drop {
+    width: 14vw;
+    height: 14vw;
+    margin: auto;
+    margin-top: 10vh;
+  }
+  .pic {
+    margin-bottom: 2vw;
+  }
+  .dropwords {
+    padding: 1vw;
+    text-align: center;
+  }
 }

@@ -27,7 +27,11 @@ class Home extends Component {
   render() {
     return(
       <div className='homePage'>
-        <p>{this.state.desc}</p>
+        <div>
+          <p>{this.state.desc}</p>
+        </div>
+
+        
       </div>
     )
   }

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import pcreate_logo from './../../resources/images/pcreate_logo.png';
 import {Link} from 'react-router-dom';
-import routes from './../../routes';
 import './../../resources/hamburgers.css'
 import './nav.css';
 import {connect} from 'react-redux'
@@ -27,12 +26,16 @@ class Nav extends Component {
     })
   }
 
+  yeet = () => {
+    console.log('yeet')
+  }
+
   render() {
   if(this.state.button_on === 'no') {
     return(
       <div>
         <nav className='navbar_lines'>
-        <Link to='/'><img className='logo' src={pcreate_logo} alt='pcreate' /></Link>
+        <Link  to='/'><img className='logo' src={pcreate_logo} alt='pcreate' /></Link>
         {
           (this.props.profile_pic)
           ?<img className='profile_pic' src={this.props.profile_pic} alt='' />
@@ -46,12 +49,12 @@ class Nav extends Component {
         </button>
         </div>
           <div className='normal_nav'>
-            <Link className='normal_item' to='/NewBuild'>New Build</Link>
+            <Link onClick={this.yeet} className='normal_item' to='/NewBuild'>New Build</Link>
             <Link className='normal_item' to='/CompletedBuilds'>Completed Builds</Link>
-            <Link className='normal_item' to='/Account'>Account</Link>
+            <Link  className='normal_item' to='/Account'>Account</Link>
           </div>
         </nav>
-        {routes}
+        
       </div>
     )
   } else {
@@ -71,14 +74,14 @@ class Nav extends Component {
           </span>
         </button>
           <div className='dropdownItems_notHidden'>
-          <Link className='dropdown_link' onClick={this.buttonOff} to='/NewBuild'>New Build</Link>
+          <Link onClick={this.yeet} className='dropdown_link' onClick={this.buttonOff} to='/NewBuild'>New Build</Link>
             <Link className='dropdown_link' onClick={this.buttonOff} to='/CompletedBuilds'>Completed Builds</Link>
             <Link className='dropdown_link' onClick={this.buttonOff} to='/Account'>Account</Link>
           </div>
         </div>
         
       </nav>
-      {routes}
+ 
     </div>
       )
   }}

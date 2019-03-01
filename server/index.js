@@ -34,6 +34,9 @@ app.use(session({
  app.post('/auth/login', auth_ctrl.login)
  app.post('/auth/logout', auth_ctrl.logout)
 
+// edit user
+app.put('/auth/user/:id', auth_ctrl.updatePic)
+
  // new build
  app.get('/api/cpus', newBuild_ctrl.cpus)
  app.post('/api/mobos', newBuild_ctrl.mobos)
@@ -44,7 +47,6 @@ app.use(session({
  app.post('/api/psu', newBuild_ctrl.psu)
 
  // S3
-
  app.get('/api/signs3', (req, res) => {
   aws.config = {
     region: 'us-west-2',

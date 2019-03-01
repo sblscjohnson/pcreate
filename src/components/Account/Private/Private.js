@@ -9,8 +9,8 @@ import Dropzone from 'react-dropzone';
 import { GridLoader } from 'react-spinners';
 
 class Private extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       isUploading: false,
       url: 'http://via.placeholder.com/450x450',
@@ -52,7 +52,7 @@ class Private extends Component {
       console.log(url)
       this.props.updateUser({pic_link: url})
       this.setState({ isUploading: false, url });
-        // THEN DO SOMETHING WITH THE URL. SEND TO DB USING POST REQUEST OR SOMETHING
+        // axios.put('')
       })
       .catch(err => {
         this.setState({
@@ -73,18 +73,21 @@ class Private extends Component {
   render() {
     const { url, isUploading } = this.state;
     return (
-      <div className="pic">
+      <div >
         {/* <h1>{url}</h1> */}
-
+        <div className="bigpic">
+        <img className='pic drop' src={this.props.profile_pic} alt='' />
         <Dropzone
-        className='drop'
+        className='dropwords'
           onDropAccepted={this.getSignedRequest}
           accept="image/*"
           multiple={false}
           >
-          {isUploading ? <GridLoader /> : <div><img className='profpic' src={this.props.profile_pic} alt='' /><p className='dropwords'>Edit Profile Pic</p></div>}
+          {isUploading ? <GridLoader /> : <p>Edit Profile Pic</p>}
         </Dropzone>
-          
+        <p>Email: {this.props.email}</p>
+
+        </div>
       </div>
     );
   }

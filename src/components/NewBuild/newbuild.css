@@ -37,3 +37,22 @@
   border-radius: 5px;
   border: 2px black solid;
 }
+
+.complete {
+  background-color: #bfd8d2;
+  padding: 1vw;
+  border-radius: 5px;
+  border: 2px black solid;
+}
+
+@media (min-width: 1200px) {
+  .top {
+    justify-content: space-evenly;
+  }
+  .part {
+    margin: 1vw;
+  }
+  .part_img {
+    height: 10vh;
+  }
+}

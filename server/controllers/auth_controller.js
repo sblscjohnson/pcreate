@@ -33,4 +33,12 @@ module.exports = {
     req.session.destroy();
     res.sendStatus(200);
   },
+  updatePic: async (req, res) => {
+    const {email, pic_link} = req.body
+    const userID = req.params.id
+    console.log(email, pic_link, userID)
+    const db = req.app.get('db')
+    await db.user.
+    res.status(200).send('hit')
+  }
 }
