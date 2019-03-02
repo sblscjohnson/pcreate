@@ -1,20 +1,25 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
+import axios from 'axios';
 
 class CompletedBuilds extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: ''
+      id: '',
+      buildObj: {}
     }
   }
+
+
 
   componentDidMount() {
     console.log('id', this.props.id)
     this.setState({
       id: this.props.id
     })
+    axios.post('')
   }
   
   render() {

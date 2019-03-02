@@ -9,7 +9,7 @@
   flex-direction: row;
   overflow: scroll;
   border-bottom: 2px black solid;
-  background-color: white;
+  background-color: #d5d5d5;
 }
 
 .part {

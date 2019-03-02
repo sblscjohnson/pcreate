@@ -3,8 +3,6 @@ import {Link} from 'react-router-dom';
 import routes from './routes';
 import './newbuild.css';
 import {connect} from 'react-redux';
-import axios from 'axios';
-import {HashRouter} from 'react-router-dom'
 
 class NewBuild extends Component {
   constructor(props) {

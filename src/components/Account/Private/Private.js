@@ -93,7 +93,7 @@ class Private extends Component {
   }
 
   render() {
-    const { url, isUploading } = this.state;
+    const { isUploading } = this.state;
     return (
       <div >
         {/* <h1>{url}</h1> */}

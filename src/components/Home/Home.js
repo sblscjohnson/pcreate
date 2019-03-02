@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './home.css'
 import axios from 'axios';
 require('dotenv').config()
-const {TC_API_KEY} = process.env
+const API_KEY = process.env.REACT_APP_API_KEY
 
 class Home extends Component {
   constructor(props) {
@@ -10,28 +10,55 @@ class Home extends Component {
     this.state = {
       source: '',
       title: '',
+      date: '',
       author: '',
-      desc: ''
+      content: '',
+      url: '',
     }
   }
   
   componentDidMount() {
-    axios.get('https://api.whatdoestrumpthink.com/api/v1/quotes/random')
+    axios.get(`https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${API_KEY}`)
     .then(res => {
+      const randomNum = Math.floor((Math.random() * 10) + 1)
       this.setState({
-        desc: res.data.message
+        title: res.data.articles[randomNum].title,
+        date: res.data.articles[randomNum].publishedAt.substring(0, 10),
+        author: res.data.articles[randomNum].author,
+        content: res.data.articles[randomNum].description,
+        url: res.data.articles[randomNum].url,
       })
     })
   }
 
   render() {
     return(
-      <div className='homePage'>
-        <div>
-          <p>{this.state.desc}</p>
+      <div className='homePage'> 
+      <div className='tnewsthingy'>
+        <h2 className='head news'>TechCrunch News</h2>
+        <div className='technews'>
+          <p className='title'>{this.state.title}</p>
+          <p>Written by {this.state.author}</p>
+          <p className='date'>{this.state.date}</p>
+          <p>{this.state.content}</p>
+          <p className='link'>Link: <a className='url' href={this.state.url}>{this.state.url}</a></p>
         </div>
-
-        
+        </div>
+        <div className='columnthing'>
+      <div className='linkthingy'>
+        <h2 className='head'>Helpful Resources</h2>
+        <div className='links'>
+          <a className='indthing' href='https://pcpartpicker.com' target='_blank' rel="noopener noreferrer">PCPartPicker</a>
+          <a className='indthing' href='https://www.reddit.com/r/buildapc' target='_blank' rel="noopener noreferrer">r/buildapc</a>
+          <a className='indthing' href='https://www.youtube.com/user/LinusTechTips' target='_blank' rel="noopener noreferrer">Linus Tech Tips</a>
+          <a className='indthing' href='https://www.youtube.com/watch?v=AZRusH5fGIY' target='_blank' rel="noopener noreferrer">The Verge PC Build lol don't watch this</a>
+        </div>
+      </div>
+      <div className='vidofweek'>
+        <h2 className='head'>Video of The Week</h2>
+        <iframe width="560" height="315" title='Level1Techs - Faster Adobe Premiere' src="https://www.youtube.com/embed/96e9grnOTZE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      </div>
       </div>
     )
   }
