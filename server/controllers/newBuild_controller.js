@@ -61,5 +61,12 @@ module.exports = {
     }).catch((err) => {
       res.status(500).send('get psu fail', err)
     })
+  },
+  newBuild: async (req, res) => {
+    const {user_id, cpu, mobo, cooler, ram, gpu, psu, pc_case, price} = req.body
+    console.log(req.body)
+    await req.app.get('db').newBuild.newbuild({user_id, cpu, mobo, cooler, ram, gpu, psu, pc_case, price}).then((build) => {
+      res.status(200).send(build)
+  })
   }
 }

@@ -6,14 +6,14 @@ class CompletedBuilds extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: ''
+      id: ''
     }
   }
 
   componentDidMount() {
-    console.log('email', this.props.email)
+    console.log('id', this.props.id)
     this.setState({
-      email: this.props.email
+      id: this.props.id
     })
   }
   
@@ -37,6 +37,7 @@ class CompletedBuilds extends Component {
 const mapStateToProps = (reduxState) => {
   console.log(reduxState.user)
   return {
+    id: reduxState.user.id,
     email: reduxState.user.email
   }
 }

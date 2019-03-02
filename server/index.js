@@ -13,7 +13,7 @@ const aws = require('aws-sdk');
 
 const {SERVER_PORT, DB_CONNECTION, SESSION_SECRET, S3_BUCKET, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY} = process.env;
 
-app.use( express.static( `${__dirname}/../build` ) );
+// app.use( express.static( `${__dirname}/../build` ) );
 
 app.use(bodyParser.json());
 app.use(session({
@@ -45,6 +45,7 @@ app.put('/auth/user/:id', auth_ctrl.updatePic)
  app.post('/api/cooler', newBuild_ctrl.cooler)
  app.post('/api/gpu', newBuild_ctrl.gpu)
  app.post('/api/psu', newBuild_ctrl.psu)
+ app.post('/api/newbuild', newBuild_ctrl.newBuild)
 
  // S3
  app.get('/api/signs3', (req, res) => {

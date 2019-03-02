@@ -33,10 +33,7 @@ class Account extends Component {
     console.log(email, password)
     axios.post('/auth/register', {email, password})
     .then(res => {
-      console.log('res data', res.data[0].id)
-      const {email, profile_pic} = res.data[0]
       this.props.updateUser(res.data[0])
-      console.log('new', this.props.id)
       this.props.history.push('/Private')
     })
     this.setState({
@@ -44,19 +41,23 @@ class Account extends Component {
       password: '',
     })
   } else {
-    alert('Login with Email and Password')
+    alert('Register with Email and Password')
   }
   }
 
   login = () => {
     const {email, password} = this.state;
      axios.post('/auth/login', {email, password})
-     .then(res => { 
-         this.props.updateUser(res.data[0]);
-         this.props.history.push('/Private')       
-     }).catch(err => {
-         console.log(err)
-     })
+     .then(res => {
+       console.log(res.data)
+       if(res.data.email) {
+      this.props.updateUser(res.data)
+      this.props.history.push('/Private')
+      this.setState({
+        email: '',
+        password: '',
+      })}
+    })
      
  }
 

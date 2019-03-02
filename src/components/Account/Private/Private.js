@@ -14,7 +14,18 @@ class Private extends Component {
     this.state = {
       isUploading: false,
       url: 'http://via.placeholder.com/450x450',
+      id: null,
+      email: '',
+      pic_link: ''
     };
+  }
+
+  componentDidMount() {
+    const {id} = this.props
+    console.log('id', id)
+    if(!id) {
+      this.props.history.push('/Account')
+    }
   }
 
   getSignedRequest = ([file]) => {
@@ -50,9 +61,12 @@ class Private extends Component {
     .put(signedRequest, file, options)
     .then(response => {
       console.log(url)
-      this.props.updateUser({pic_link: url})
-      this.setState({ isUploading: false, url });
-        // axios.put('')
+      this.setState({ isUploading: false, url, id: this.props.id, email: this.props.email, pic_link: url});
+      // axios.put('')
+      axios.put(`/auth/user/${this.state.id}`, {pic_link: this.state.pic_link}).then(res => {
+        this.props.updateUser(res.data[0])
+        }
+      )
       })
       .catch(err => {
         this.setState({
@@ -70,6 +84,14 @@ class Private extends Component {
       });
   };
 
+  logout = () => {
+    axios.post('auth/logout')
+    .then(res => {
+      this.props.updateUser({})
+      this.props.history.push('/Account')
+    })
+  }
+
   render() {
     const { url, isUploading } = this.state;
     return (
@@ -86,7 +108,7 @@ class Private extends Component {
           {isUploading ? <GridLoader /> : <p>Edit Profile Pic</p>}
         </Dropzone>
         <p>Email: {this.props.email}</p>
-
+        <button className='button r' onClick={this.logout}>Logout</button>
         </div>
       </div>
     );
@@ -98,7 +120,7 @@ const mapStateToProps = (reduxState) => {
   return {
     id: id,
     profile_pic: pic_link,
-    email: email
+    email: email,
   }
 }
 

@@ -38,6 +38,11 @@
   border: 2px black solid;
 }
 
+.r {
+  background-color: #fedcd2;
+  margin-top: 3vh;
+}
+
 .bigpic {
   display: flex;
   justify-content: center;
@@ -51,12 +56,16 @@
   text-align: center;
   flex-direction: column;
   justify-content: center;
+  margin: 10vh;
 }
 
 .drop {
   width: 50vw;
   height: 50vw;
   border-radius: 50%;
+  position: relative;
+  left: auto;
+  right: auto;
   border: 2px black solid;
   /* display: flex;
   justify-content: center;

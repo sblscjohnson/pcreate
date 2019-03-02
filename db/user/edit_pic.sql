@@ -1,2 +1,4 @@
 update pcreate_users
-where email={email}
+set pic_link = ${pic_link}
+where id = ${id}
+returning *;

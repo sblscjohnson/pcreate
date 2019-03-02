@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import './complete.css'
 import {Link} from 'react-router-dom';
 import {clearBuild} from './../../../ducks/reducer';
+import axios from 'axios'
 
 class Complete extends Component {
   constructor(props) {
@@ -12,6 +13,12 @@ class Complete extends Component {
 
   clearBuild = () => {
     this.props.clearBuild({})
+  }
+
+  newBuild = () => {
+    const stuffprice = (this.props.cpprice + this.props.mprice+ this.props.caprice + this.props.rprice + this.props.coprice + this.props.gprice + this.props.pprice).toFixed(2)
+    const {id: user_id, cpname: cpu, mname: mobo, coname: cooler, rname: ram, gname: gpu, pname: psu, caname: pc_case} = this.props
+    axios.post('/api/newbuild', {user_id, cpu, mobo, cooler, ram, gpu, psu, pc_case, price: stuffprice}).then((res) => this.props.clearBuild({}))
   }
 
   render() {
@@ -28,6 +35,7 @@ class Complete extends Component {
           <Link to='/NewBuild/Cpus'><p className='linkbutt'>Change CPU</p></Link>
           </div>
           :<div>
+          <Link to='/NewBuild/Cpus'><p className='linkbutt'>Add CPU</p></Link>
           </div>
         }</div>
         <div className='inditem'>{
@@ -41,6 +49,7 @@ class Complete extends Component {
           <Link to='/NewBuild/Motherboards'><p className='linkbutt'>Change Motherboard</p></Link>
           </div>
           :<div>
+          <Link to='/NewBuild/Motherboards'><p className='linkbutt'>Add Motherboard</p></Link>
           </div>
         }</div>
         <div className='inditem'>{
@@ -54,6 +63,7 @@ class Complete extends Component {
           <Link to='/NewBuild/Cases'><p className='linkbutt'>Change Case</p></Link>
           </div>
           :<div>
+          <Link to='/NewBuild/Cases'><p className='linkbutt'>Add Case</p></Link>
           </div>
         }</div>
         <div className='inditem'>{
@@ -68,6 +78,7 @@ class Complete extends Component {
           <Link to='/NewBuild/Ram'><p className='linkbutt'>Change RAM</p></Link>
           </div>
           :<div>
+          <Link to='/NewBuild/Ram'><p className='linkbutt'>Add RAM</p></Link>
           </div>
         }</div>
         <div className='inditem'>{
@@ -80,6 +91,7 @@ class Complete extends Component {
           <Link to='/NewBuild/Coolers'><p className='linkbutt'>Change CPU Cooler</p></Link>
           </div>
           :<div>
+          <Link to='/NewBuild/Coolers'><p className='linkbutt'>Add CPU Cooler</p></Link>
           </div>
         }</div>
         <div className='inditem'>{
@@ -92,6 +104,7 @@ class Complete extends Component {
           <Link to='/NewBuild/Gpus'><p className='linkbutt'>Change Graphics Card</p></Link>
           </div>
           :<div>
+          <Link to='/NewBuild/Gpus'><p className='linkbutt'>Add Graphics Card</p></Link>
           </div>
         }</div>
         <div className='inditem'>{
@@ -104,9 +117,11 @@ class Complete extends Component {
           <Link to='/NewBuild/Psus'><p className='linkbutt'>Change Power Supply</p></Link>
           </div>
           :<div>
+          <Link to='/NewBuild/Psus'><p className='linkbutt'>Add Power Supply</p></Link>
           </div>
         }</div>
         <h3>Total Price: ${(this.props.cpprice + this.props.mprice+ this.props.caprice + this.props.rprice + this.props.coprice + this.props.gprice + this.props.pprice).toFixed(2)}</h3>
+        <Link className='addbutt' to='/CompletedBuilds'><p onClick={this.newBuild}>Add To Completed Builds</p></Link>
         <p className='clearbutt' onClick={this.clearBuild}>Clear</p>
       </div>
     )
@@ -155,6 +170,8 @@ const mapStateToProps = (reduxState) => {
     pefficency: psu_efficiency,
     pprice: psu_price,
     pimage: psu_image,
+    //
+    id: reduxState.user.id
   }
 }
 

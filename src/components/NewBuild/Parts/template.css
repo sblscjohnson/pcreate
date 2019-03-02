@@ -59,6 +59,8 @@
     margin: 3%;
     margin-left: 8%;
     padding: auto;
+    position: relative;
+    bottom: 15%;
   }
   .template_button {
     margin: auto;
