@@ -41,7 +41,7 @@ class Home extends Component {
           <p>Written by {this.state.author}</p>
           <p className='date'>{this.state.date}</p>
           <p>{this.state.content}</p>
-          <p className='link'>Link: <a className='url' href={this.state.url}>{this.state.url}</a></p>
+          <p className='link'>Link: <a className='url' href={this.state.url} target='_blank' rel="noopener noreferrer">{this.state.url}</a></p>
         </div>
         </div>
         <div className='columnthing'>

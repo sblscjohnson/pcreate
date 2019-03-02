@@ -107,7 +107,7 @@ class Private extends Component {
           >
           {isUploading ? <GridLoader /> : <p>Edit Profile Pic</p>}
         </Dropzone>
-        <p>Email: {this.props.email}</p>
+        <p className='email'>Email: {this.props.email}</p>
         <button className='button r' onClick={this.logout}>Logout</button>
         </div>
       </div>

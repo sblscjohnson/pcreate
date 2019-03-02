@@ -9,7 +9,7 @@
   flex-direction: row;
   overflow: scroll;
   border-bottom: 2px black solid;
-  background-color: #d5d5d5;
+  background-color: #65737e;
 }
 
 .part {
@@ -54,5 +54,8 @@
   }
   .part_img {
     height: 10vh;
+  }
+  .top::-webkit-scrollbar {
+    display: none;
   }
 }

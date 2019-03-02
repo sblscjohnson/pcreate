@@ -8,8 +8,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #d5d5d5;
   background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/itCjTBE/dark-blue-tech-circuit-board-technology-animated-background-video-graphic-design-ultra-hd-4k-3840x2160_sgelpuywg_thumbnail-full05.png");
-  background-position: right;
+  background-position: right top;
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

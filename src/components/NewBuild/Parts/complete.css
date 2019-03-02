@@ -20,21 +20,22 @@ h4 {
 }
 
 .inditem {
-  margin: 3vh;
+  margin: 2vh;
   padding: 1vw;
   border-radius: 5px;
   border: 2px black solid;
-  text-align: center;
   background-color: white;
   font-size: 18px;
   display: flex;
   flex-direction: column;
+  text-align: center;
   align-items: center;
+  justify-content: center;
 }
 
 h3 {
   font-size: 18px;
-  
+  margin: auto;
 }
 
 .linkbutt {
@@ -75,12 +76,14 @@ h3 {
 }
 
 .pic {
-  width: 40%;
-  height: 40%;
-  position: relative;
-  left: auto;
-  right: auto;
-  margin: auto;
+  width: 60%;
+  height: 60%;
+  /* position: relative;
+  right: 17%; */
+  margin: 10%;
+  display: flex;
+  align-content: center;
+  text-align: center
 }
 
 @media (min-width: 600px) {
@@ -88,8 +91,10 @@ h3 {
     width: 40%;
     left: 30%;
   }
-  .inditem {
-    height: auto;
+  .pic {
+    width: 60%;
+    height: 60%;
+    margin: auto;
   }
 }
 
