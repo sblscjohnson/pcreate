@@ -14,14 +14,21 @@ class Home extends Component {
       author: '',
       content: '',
       url: '',
-      botw: []
+      botw: {}
     }
   }
   
   componentDidMount() {
+    axios.get('/api/completebuilds/all').then(res => {
+      const num = Math.floor(Math.random() * (res.data.length - 1)) + 1
+      console.log(num)
+      this.setState({
+        botw: res.data[num]
+      })
+    })
     axios.get(`https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${API_KEY}`)
     .then(res => {
-      const randomNum = Math.floor((Math.random() * 10) + 1)
+      const randomNum = Math.floor((Math.random() * 10))
       this.setState({
         title: res.data.articles[randomNum].title,
         date: res.data.articles[randomNum].publishedAt.substring(0, 10),
@@ -29,17 +36,10 @@ class Home extends Component {
         content: res.data.articles[randomNum].description,
         url: res.data.articles[randomNum].url,
       })
-    })
-    axios.get('/api/completebuilds/all').then(res => {
-      const randomNum = Math.floor((Math.random() * 10) + 1)
-      this.setState({
-        botw: res.data[randomNum]
-      })
-    })
+    });
   }
 
   render() {
-    // const mappedBotw = this.state.botw.map
     return(
       <div className='homePage'> 
       <div className='tnewsthingy'>
@@ -69,7 +69,15 @@ class Home extends Component {
       </div>
       <div>
         <h2 className='head'>BOTW</h2>
-        <p>{JSON.stringify(this.state.botw)}</p>
+        <img src={this.state.botw.pic_link} alt={this.state.botw.email} />
+        <p>{this.state.botw.email}'s PC:</p>
+        <p>{this.state.botw.cpu}</p>
+        <p>{this.state.botw.mobo}</p>
+        <p>{this.state.botw.pc_case}</p>
+        <p>{this.state.botw.ram}</p>
+        <p>{this.state.botw.cooler}</p>
+        <p>{this.state.botw.gpu}</p>
+        <p>{this.state.botw.psu}</p>
       </div>
       </div>
     )
