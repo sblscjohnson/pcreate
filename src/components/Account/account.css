@@ -9,7 +9,7 @@
   left: 20vw;
   font-family: 'Rubik', sans-serif;
   top: 15vh;
-  background-color: #65737e;
+  background-color: #a7adba;
 }
 
 .textbox {
@@ -33,7 +33,7 @@
   align-items: center;
   justify-content: center;
   margin: 3vw;
-  background-color: #a7adba;
+  background-color: #65737e;
   padding: auto;
   border-radius: 7px;
   text-align: center;
@@ -79,10 +79,10 @@
 }
 
 .dropwords {
-  background-color: #a7adba;
+  background-color: #65737e;
   color: #FFFFFF;
   padding: 5px;
-  border: 1px black dashed;
+  border: 2px black dashed;
   text-align: center;
   padding: 3vw;
   margin-bottom: 5vh;

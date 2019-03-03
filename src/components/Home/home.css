@@ -36,7 +36,7 @@
     border: 2px solid black;
     
     position: relative;
-    background-color: #65737e;
+    background-color: #a7adba;
     padding: 3vw;
 }
 
@@ -100,7 +100,7 @@
   
   position: relative;
   top: 1vh;
-  background-color: #65737e;
+  background-color: #a7adba;
   padding: 2vw;
   font-weight: 500;
   margin: auto;
@@ -140,6 +140,7 @@ iframe {
     
     .links {
         font-size: 14px;
+        margin-bottom: 3vh;
     }
     iframe {
         width: auto; 
