@@ -17,8 +17,8 @@ class Complete extends Component {
 
   newBuild = () => {
     const stuffprice = (this.props.cpprice + this.props.mprice+ this.props.caprice + this.props.rprice + this.props.coprice + this.props.gprice + this.props.pprice).toFixed(2)
-    const {id: user_id, cpname: cpu, mname: mobo, coname: cooler, rname: ram, gname: gpu, pname: psu, caname: pc_case} = this.props
-    axios.post('/api/newbuild', {user_id, cpu, mobo, cooler, ram, gpu, psu, pc_case, price: stuffprice}).then((res) => this.props.clearBuild({}))
+    const {id: user_id, cpname: cpu, mname: mobo, coname: cooler, rname: ram, gname: gpu, pname: psu, caname: pc_case, email: user_email} = this.props
+    axios.post('/api/newbuild', {user_id, cpu, mobo, cooler, ram, gpu, psu, pc_case, price: stuffprice, user_email}).then((res) => this.props.clearBuild({}))
   }
 
   render() {
@@ -171,7 +171,8 @@ const mapStateToProps = (reduxState) => {
     pprice: psu_price,
     pimage: psu_image,
     //
-    id: reduxState.user.id
+    id: reduxState.user.id,
+    email: reduxState.user.email
   }
 }
 

@@ -7,7 +7,8 @@ insert into build(
   gpu,
   psu,
   pc_case,
-  price
+  price,
+  user_email
 ) values(
   ${user_id},
   ${cpu},
@@ -17,5 +18,6 @@ insert into build(
   ${gpu},
   ${psu},
   ${pc_case},
-  ${price}
+  ${price},
+  ${user_email}
 )

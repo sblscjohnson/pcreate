@@ -12,5 +12,11 @@ module.exports = {
         .then(builds => {
             res.status(200).send(builds)
         })
+    },
+    all: async (req, res) => {
+        await req.app.get('db').completedBuild.allbuilds()
+        .then(builds => {
+            res.status(200).send(builds)
+        })
     }
 }

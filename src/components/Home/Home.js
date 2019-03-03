@@ -14,6 +14,7 @@ class Home extends Component {
       author: '',
       content: '',
       url: '',
+      botw: []
     }
   }
   
@@ -29,9 +30,16 @@ class Home extends Component {
         url: res.data.articles[randomNum].url,
       })
     })
+    axios.get('/api/completebuilds/all').then(res => {
+      const randomNum = Math.floor((Math.random() * 10) + 1)
+      this.setState({
+        botw: res.data[randomNum]
+      })
+    })
   }
 
   render() {
+    // const mappedBotw = this.state.botw.map
     return(
       <div className='homePage'> 
       <div className='tnewsthingy'>
@@ -58,6 +66,10 @@ class Home extends Component {
         <h2 className='head'>Video of The Week</h2>
         <iframe width="560" height="315" title='Level1Techs - Faster Adobe Premiere' src="https://www.youtube.com/embed/96e9grnOTZE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
+      </div>
+      <div>
+        <h2 className='head'>BOTW</h2>
+        <p>{JSON.stringify(this.state.botw)}</p>
       </div>
       </div>
     )

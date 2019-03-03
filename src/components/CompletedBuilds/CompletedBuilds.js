@@ -13,8 +13,6 @@ class CompletedBuilds extends Component {
     }
   }
 
-
-
   componentDidMount() { 
     axios.post('/api/completebuilds/', {user_id: this.props.id})
     .then((res) => {

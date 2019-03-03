@@ -63,9 +63,9 @@ module.exports = {
     })
   },
   newBuild: async (req, res) => {
-    const {user_id, cpu, mobo, cooler, ram, gpu, psu, pc_case, price} = req.body
+    const {user_id, cpu, mobo, cooler, ram, gpu, psu, pc_case, price, user_email} = req.body
     console.log(req.body)
-    await req.app.get('db').newBuild.newbuild({user_id, cpu, mobo, cooler, ram, gpu, psu, pc_case, price}).then((build) => {
+    await req.app.get('db').newBuild.newbuild({user_id, cpu, mobo, cooler, ram, gpu, psu, pc_case, price, user_email}).then((build) => {
       res.status(200).send(build)
   })
   }
