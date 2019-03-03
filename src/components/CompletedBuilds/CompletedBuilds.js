@@ -24,7 +24,19 @@ class CompletedBuilds extends Component {
     })
   }
 
-  // deleteBuild() {}
+  deleteBuild(build) {
+    const {id} = build
+    console.log(id)
+    axios.delete(`/api/completebuilds/${id}`)
+    .then(() => {
+      axios.post('/api/completebuilds/', {user_id: this.props.id})
+      .then((res) => {
+        this.setState ({
+          builds: res.data
+        })
+      })   
+    })
+  }
   
   render() {
     let mappedBuilds = this.state.builds.map((eachBuildObj) => {
@@ -32,11 +44,12 @@ class CompletedBuilds extends Component {
         <div className='whitesmoke'>
           <p>CPU: {eachBuildObj.cpu}</p>
           <p>Mobtherboard: {eachBuildObj.mobo}</p>
-          <p>Case: {eachBuildObj.case}</p>
+          <p>Case: {eachBuildObj.pc_case}</p>
           <p>CPU Cooler: {eachBuildObj.cooler}</p>
           <p>Graphics Card: {eachBuildObj.gpu}</p>
           <p>Power Supply: {eachBuildObj.psu}</p>
           <p>Price: ${eachBuildObj.price}</p>
+          <p>obj id {eachBuildObj.id}</p>
           <p onClick={() => this.deleteBuild(eachBuildObj)}>Delete</p>
         </div>
       )

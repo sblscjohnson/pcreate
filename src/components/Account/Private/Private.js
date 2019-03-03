@@ -62,7 +62,6 @@ class Private extends Component {
     .then(response => {
       console.log(url)
       this.setState({ isUploading: false, url, id: this.props.id, email: this.props.email, pic_link: url});
-      // axios.put('')
       axios.put(`/auth/user/${this.state.id}`, {pic_link: this.state.pic_link}).then(res => {
         this.props.updateUser(res.data[0])
         }

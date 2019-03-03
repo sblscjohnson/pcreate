@@ -49,6 +49,7 @@ app.put('/auth/user/:id', auth_ctrl.updatePic)
 
 // completed build
 app.post('/api/completebuilds', compBuild_ctrl.build)
+app.delete('/api/completebuilds/:id', compBuild_ctrl.delete)
 
  // S3
  app.get('/api/signs3', (req, res) => {
