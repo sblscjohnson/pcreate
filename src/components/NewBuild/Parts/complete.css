@@ -82,7 +82,7 @@ h3 {
   height: 60%;
   /* position: relative;
   right: 17%; */
-  margin: 10%;
+  margin: auto;
   display: flex;
   align-content: center;
   text-align: center
@@ -96,7 +96,6 @@ h3 {
   .pics {
     width: 60%;
     height: 60%;
-    margin: auto;
   }
 }
 
