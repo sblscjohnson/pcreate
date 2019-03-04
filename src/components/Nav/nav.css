@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik');
 
-a { text-decoration: none; color: black }
+a { text-decoration: none; color: rgba(245, 245, 245, 0.9)  }
 a:visited { text-decoration: none; color: rgba(245, 245, 245, 0.9) }
 a:hover { text-decoration: none; }
-a:focus { text-decoration: none; }
+a:focus { text-decoration: none; } /* use to change color of current */
 
 .navbar_lines {
   background-color: rgba(0,0,0,.7);

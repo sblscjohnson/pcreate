@@ -40,7 +40,7 @@ class Ram extends Component {
             <p>Price: ${eachRamObj.price}</p>
             <p>Color: {eachRamObj.color}</p>
           </div>
-          <Link className='template_button' to='/NewBuild/Cases' onClick={() => this.selectRam(eachRamObj)}><button>Select</button></Link>
+          <Link className='template_button' to='/NewBuild/Cases' onClick={() => this.selectRam(eachRamObj)}><p>Select</p></Link>
         </div>
       )
     })

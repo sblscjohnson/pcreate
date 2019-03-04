@@ -4,13 +4,13 @@
   margin-right: auto;
   font-family: 'Rubik', sans-serif;
   border-radius: 5px;
-  border: black 2px solid;
+  border: rgba(245, 245, 245, 0.9) 2px solid;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 10vh;
   width: 20vw;
-  background-color: rgba(245, 245, 245, 0.7);
+  background-color: rgba(0,0,0,.9);
   text-align: center;
 }
 
