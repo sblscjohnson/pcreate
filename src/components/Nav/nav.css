@@ -135,7 +135,6 @@ a:visited { text-decoration: none; color: rgba(245, 245, 245, 0.9) }
     border-radius: 7px;
   }
   .normal_item:hover { text-decoration: none; background-color: rgba(245, 245, 245, 0.9); color: rgba(0,0,0)}
-  .normal_item:focus { text-decoration: none; background-color: rgba(245, 245, 245, 0.9); color: rgba(0,0,0)}
 
   .profile_pic {
     position: relative;
