@@ -64,7 +64,7 @@ class Account extends Component {
         <input className='textbox' value={this.state.email} type='email' onChange={e => this.handleChange('email', e.target.value)} placeholder='username' />
         <input className='textbox' value={this.state.password} type='password' onChange={e => this.handleChange('password', e.target.value)} placeholder='password' />
         <button className='button' onClick={this.register}>Register</button>
-        <button className='button' onClick={this.login}>Login</button>
+        <button className='button lowerbutt' onClick={this.login}>Login</button>
       </div>
     )
   }

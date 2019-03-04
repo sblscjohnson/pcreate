@@ -52,17 +52,6 @@ class Home extends Component {
               <p className='link'>Link: <a className='url' href={this.state.url} target='_blank' rel="noopener noreferrer">{this.state.url}</a></p>
             </div>
           </div>
-          <div className='linkthingy'>
-            <h2 className='head'>Helpful Resources</h2>
-            <div className='links'>
-              <a className='indthing' href='https://pcpartpicker.com' target='_blank' rel="noopener noreferrer">PCPartPicker</a>
-              <a className='indthing' href='https://www.reddit.com/r/buildapc' target='_blank' rel="noopener noreferrer">r/buildapc</a>
-              <a className='indthing' href='https://www.youtube.com/user/LinusTechTips' target='_blank' rel="noopener noreferrer">Linus Tech Tips</a>
-              <a className='indthing' href='https://www.youtube.com/watch?v=AZRusH5fGIY' target='_blank' rel="noopener noreferrer">The Verge PC Build lol don't watch this</a>
-            </div>
-          </div>
-          </div>
-          <div className='columnthing'>
           <div className='botw'>
             <h2 className='head'>BOTW <br /> (Build of The Week)</h2>
           <div className='botwnohead'>
@@ -81,6 +70,17 @@ class Home extends Component {
             <p className='indivthing'>Price: ${this.state.botw.price}</p>
             </div>
           </div>
+          </div>
+          </div>
+          <div className='columnthing'>
+          <div className='linkthingy'>
+            <h2 className='head'>Helpful Resources</h2>
+            <div className='links'>
+              <a className='indthing' href='https://pcpartpicker.com' target='_blank' rel="noopener noreferrer">PCPartPicker</a>
+              <a className='indthing' href='https://www.reddit.com/r/buildapc' target='_blank' rel="noopener noreferrer">r/buildapc</a>
+              <a className='indthing' href='https://www.youtube.com/user/LinusTechTips' target='_blank' rel="noopener noreferrer">Linus Tech Tips</a>
+              <a className='indthing' href='https://www.youtube.com/watch?v=AZRusH5fGIY' target='_blank' rel="noopener noreferrer">The Verge PC Build lol don't watch this</a>
+            </div>
         </div>
         <div className='vidofweek'>
           <h2 className='head'>Video of The Week</h2>

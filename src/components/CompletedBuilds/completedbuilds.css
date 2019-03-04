@@ -10,7 +10,7 @@
   justify-content: center;
   height: 10vh;
   width: 20vw;
-  background-color: white;
+  background-color: rgba(245, 245, 245, 0.7);
   text-align: center;
 }
 
@@ -26,10 +26,9 @@
     align-items: center;
     height: 10vh;
     justify-content: space-evenly;
-    /* font-size: 12px; */
     width: 85vw;
     text-align: center;
-    background-color: white;
+    background-color: rgba(245, 245, 245, 0.7);
 }
 
 .finitem {
@@ -39,7 +38,7 @@
 }
 
 .yeetdelete {
-background-color: #ff4040;
+background-color: rgba(255, 64, 64, 0.7);
   padding: 1%;
   width: 8%;
   border-radius: 5px;

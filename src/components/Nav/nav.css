@@ -6,7 +6,7 @@ a:hover { text-decoration: none; }
 a:focus { text-decoration: none; }
 
 .navbar_lines {
-  background-color: #010101;
+  background-color: rgba(0,0,0,.7);
   background-size: cover;
   display: flex;
   justify-content: flex-end;
@@ -16,7 +16,7 @@ a:focus { text-decoration: none; }
 }
 
 .navbar_x {
-  background-color: #010101;
+  background-color: rgba(0,0,0,.7);
   background-size: cover;
   display: flex;
   justify-content: flex-end;
@@ -48,8 +48,9 @@ a:focus { text-decoration: none; }
 
 .dropdown_link {
   position: relative;
-  border-top: 2px black solid;
+  border-top: 2px rgba(245, 245, 245, 0.9) solid;
   padding: 10px;
+  color: rgba(245, 245, 245, 0.9);
 }
 
 .dropdownItems_notHidden {
@@ -62,9 +63,9 @@ a:focus { text-decoration: none; }
   top: 78px;
   right: 0vw;
   width: 40vw;
-  background-color: #f0ece2;
+  background-color: rgba(0,0,0,.7);
   z-index: 2;
-  color: whitesmoke;
+  /* color: whitesmoke; */
   border-radius: 0px 0px 5px 5px;
 }
 
@@ -73,7 +74,7 @@ a:focus { text-decoration: none; }
 }
 
 .profile_pic {
-  background-color: #FFFFFF;
+  background-color: rgba(245, 245, 245, 0.7);
   border-radius: 50%;
   height: 60px;
   /* position: absolute; */
@@ -118,7 +119,7 @@ a:focus { text-decoration: none; }
   }
   .normal_nav {
     display: flex;
-    background-color: #FFFFFF;
+    background-color: rgba(150, 150, 150, 0.7);
     position: relative;
     right: 5vw;
     border-radius: 5px;
@@ -128,8 +129,9 @@ a:focus { text-decoration: none; }
     font-size: 2.1vw;
     font-family: 'Rubik', sans-serif;
     margin: 1vw;
-    background-color: #f0ece2;
-    border: 2px black solid;
+    background-color: rgba(0,0,0,.9);
+    color: rgba(245, 245, 245, 0.9);
+    border: 2px rgba(245, 245, 245, 0.9) solid;
     padding: .5vw;
     border-radius: 7px;
   }

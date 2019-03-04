@@ -9,7 +9,7 @@
   flex-direction: row;
   overflow: scroll;
   border-bottom: 2px black solid;
-  background-color: #a7adba;
+  background-color: rgba(150, 150, 150, 0.7);
 }
 
 .top::-webkit-scrollbar {
@@ -27,7 +27,7 @@
   margin-left: 2vw;
 }
 
-.startbutton {
+/* .startbutton {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -40,10 +40,10 @@
   top: 10vh;
   border-radius: 5px;
   border: 2px black solid;
-}
+} */
 
 .complete {
-  background-color: #acdbdf;
+  background-color: rgba(22, 75, 106, 0.7);
   padding: 1vw;
   border-radius: 5px;
   border: 2px black solid;
