@@ -2,8 +2,7 @@
 
 a { text-decoration: none; color: rgba(245, 245, 245, 0.9)  }
 a:visited { text-decoration: none; color: rgba(245, 245, 245, 0.9) }
-a:hover { text-decoration: none; }
-a:focus { text-decoration: none; } /* use to change color of current */
+ /* use to change color of current */
 
 .navbar_lines {
   background-color: rgba(0,0,0,.7);
@@ -135,6 +134,9 @@ a:focus { text-decoration: none; } /* use to change color of current */
     padding: .5vw;
     border-radius: 7px;
   }
+  .normal_item:hover { text-decoration: none; background-color: rgba(245, 245, 245, 0.9); color: rgba(0,0,0)}
+  .normal_item:focus { text-decoration: none; background-color: rgba(245, 245, 245, 0.9); color: rgba(0,0,0)}
+
   .profile_pic {
     position: relative;
     right: 6vw;

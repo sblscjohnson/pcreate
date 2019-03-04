@@ -12,6 +12,12 @@ class NewBuild extends Component {
       num: 0
     }
   }
+
+  componentDidMount() {
+    if(!this.props.cpu_image) {
+      this.props.history.push('/NewBuild/Cpus')
+    }
+  }
   
   render() {
     return(
