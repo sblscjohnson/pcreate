@@ -7,18 +7,14 @@ module.exports = {
     })
   },
   mobos: async (req, res) => {
-    console.log(req.body)
     const {socket} = req.body;
-    console.log(socket)
     await req.app.get('db').newBuild.getmobos({socket: socket}).then((mobos) => {
-      console.log(mobos)
       res.status(200).send(mobos)
     }).catch((err) => {
       res.status(500).send('get mobos fail', err)
     })
   },
   ram: async (req, res) => {
-    console.log(req.body)
     const {ram_slots} = req.body
     await req.app.get('db').newBuild.getram({ram_slots: ram_slots}).then((ram) => {
       res.status(200).send(ram)
@@ -27,7 +23,6 @@ module.exports = {
     })
   },
   case: async (req, res) => {
-    console.log(req.body)
     const {mobo_type} = req.body
     await req.app.get('db').newBuild.getcase({mobo_type: mobo_type}).then((compcase) => {
       res.status(200).send(compcase)
@@ -37,7 +32,6 @@ module.exports = {
   },
   cooler: async (req, res) => {
     const {socket, max_aio, max_air} = req.body
-    console.log(socket, max_aio, max_air)
     await req.app.get('db').newBuild.getcooler({socket: socket, max_aio: max_aio, max_air: max_air}).then((cooler) => {
       res.status(200).send(cooler)
     }).catch((err) => {
@@ -45,7 +39,6 @@ module.exports = {
     })
   },
   gpu: async (req, res) => {
-    console.log(req.body)
     const {cpu_tier} = req.body
     await req.app.get('db').newBuild.getgpu({tier: cpu_tier}).then((gpu) => {
       res.status(200).send(gpu)
@@ -54,7 +47,6 @@ module.exports = {
     })
   },
   psu: async (req, res) => {
-    console.log(req.body)
     const {psu_size, cpu_tier} = req.body
     await req.app.get('db').newBuild.getpsu({psu_size, tier: cpu_tier}).then((psu) => {
       res.status(200).send(psu)
@@ -64,7 +56,6 @@ module.exports = {
   },
   newBuild: async (req, res) => {
     const {user_id, cpu, mobo, cooler, ram, gpu, psu, pc_case, price, user_email} = req.body
-    console.log(req.body)
     await req.app.get('db').newBuild.newbuild({user_id, cpu, mobo, cooler, ram, gpu, psu, pc_case, price, user_email}).then((build) => {
       res.status(200).send(build)
   })

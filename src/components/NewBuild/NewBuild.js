@@ -12,10 +12,6 @@ class NewBuild extends Component {
       num: 0
     }
   }
-
-  componentDidMount() {
-      console.log('new build plz work')
-  }
   
   render() {
     return(
@@ -37,7 +33,6 @@ class NewBuild extends Component {
 }
 
 const mapStateToProps = (reduxState) => {
-    console.log('state build obj', reduxState.build)
     const {cpu_image, mobo_image, case_image, ram_image, psu_image, cooler_image, gpu_image} = reduxState.build
   return {
     cpu_image: cpu_image,

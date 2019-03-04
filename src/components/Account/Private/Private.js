@@ -22,7 +22,6 @@ class Private extends Component {
 
   componentDidMount() {
     const {id} = this.props
-    console.log('id', id)
     if(!id) {
       this.props.history.push('/Account')
     }
@@ -46,7 +45,6 @@ class Private extends Component {
       this.uploadFile(file, signedRequest, url);
     })
     .catch(err => {
-      console.log(err);
     });
   };
   
@@ -60,7 +58,6 @@ class Private extends Component {
     axios
     .put(signedRequest, file, options)
     .then(response => {
-      console.log(url)
       this.setState({ isUploading: false, url, id: this.props.id, email: this.props.email, pic_link: url});
       axios.put(`/auth/user/${this.state.id}`, {pic_link: this.state.pic_link}).then(res => {
         this.props.updateUser(res.data[0])
@@ -97,7 +94,7 @@ class Private extends Component {
       <div >
         {/* <h1>{url}</h1> */}
         <div className="bigpic">
-        <img className='pic drop' src={this.props.profile_pic} alt='' />
+        <img className='pict drop' src={this.props.profile_pic} alt='' />
         <Dropzone
         className='dropwords'
           onDropAccepted={this.getSignedRequest}
@@ -106,7 +103,7 @@ class Private extends Component {
           >
           {isUploading ? <GridLoader /> : <p>Edit Profile Pic</p>}
         </Dropzone>
-        <p className='email'>Email: {this.props.email}</p>
+        <p className='email'>Username: {this.props.email}</p>
         <button className='button r' onClick={this.logout}>Logout</button>
         </div>
       </div>

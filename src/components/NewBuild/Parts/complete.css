@@ -77,7 +77,7 @@ h3 {
   font-weight: 500;
 }
 
-.pic {
+.pics {
   width: 60%;
   height: 60%;
   /* position: relative;
@@ -93,7 +93,7 @@ h3 {
     width: 40%;
     left: 30%;
   }
-  .pic {
+  .pics {
     width: 60%;
     height: 60%;
     margin: auto;

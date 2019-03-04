@@ -13,7 +13,7 @@ const aws = require('aws-sdk');
 
 const {SERVER_PORT, DB_CONNECTION, SESSION_SECRET, S3_BUCKET, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY} = process.env;
 
-// app.use( express.static( `${__dirname}/../build` ) );
+app.use( express.static( `${__dirname}/../build` ) );
 
 app.use(bodyParser.json());
 app.use(session({
@@ -73,7 +73,6 @@ app.get('/api/completebuilds/all', compBuild_ctrl.all)
 
   s3.getSignedUrl('putObject', s3Params, (err, data) => {
     if (err) {
-      console.log(err);
       return res.end();
     }
     const returnData = {

@@ -9,7 +9,7 @@
   left: 20vw;
   font-family: 'Rubik', sans-serif;
   top: 15vh;
-  background-color: #a7adba;
+  background-color: #69779b;
 }
 
 .textbox {
@@ -33,7 +33,7 @@
   align-items: center;
   justify-content: center;
   margin: 3vw;
-  background-color: #65737e;
+  background-color: #acdbdf;
   padding: auto;
   border-radius: 7px;
   text-align: center;
@@ -41,7 +41,7 @@
 }
 
 .r {
-  background-color: #a7adba;
+  background-color: #acdbdf;
   margin-top: 3vh;
 }
 
@@ -57,7 +57,7 @@
   color: #FFFFFF;
 }
 
-.pic {
+.pict {
   display: flex;
   text-align: center;
   flex-direction: column;
@@ -79,7 +79,7 @@
 }
 
 .dropwords {
-  background-color: #65737e;
+  background-color: #69779b;
   color: #FFFFFF;
   padding: 5px;
   border: 2px black dashed;

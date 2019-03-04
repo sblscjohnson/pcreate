@@ -15,7 +15,6 @@ class Account extends Component {
   
   componentDidMount() {
     const {id} = this.props
-    console.log('id', id)
     if(id) {
       this.props.history.push('/Private')
     }
@@ -30,7 +29,6 @@ class Account extends Component {
   register = () => {
     if(this.state.email && this.state.password){
     const {email, password} = this.state;
-    console.log(email, password)
     axios.post('/auth/register', {email, password})
     .then(res => {
       this.props.updateUser(res.data[0])
@@ -49,7 +47,6 @@ class Account extends Component {
     const {email, password} = this.state;
      axios.post('/auth/login', {email, password})
      .then(res => {
-       console.log(res.data)
        if(res.data.email) {
       this.props.updateUser(res.data)
       this.props.history.push('/Private')
@@ -64,7 +61,7 @@ class Account extends Component {
   render() {
     return(
       <div className='login'>
-        <input className='textbox' value={this.state.email} type='email' onChange={e => this.handleChange('email', e.target.value)} placeholder='email' />
+        <input className='textbox' value={this.state.email} type='email' onChange={e => this.handleChange('email', e.target.value)} placeholder='username' />
         <input className='textbox' value={this.state.password} type='password' onChange={e => this.handleChange('password', e.target.value)} placeholder='password' />
         <button className='button' onClick={this.register}>Register</button>
         <button className='button' onClick={this.login}>Login</button>

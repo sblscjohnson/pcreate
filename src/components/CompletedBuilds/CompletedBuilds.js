@@ -24,7 +24,6 @@ class CompletedBuilds extends Component {
 
   deleteBuild(build) {
     const {id} = build
-    console.log(id)
     axios.delete(`/api/completebuilds/${id}`)
     .then(() => {
       axios.post('/api/completebuilds/', {user_id: this.props.id})
@@ -39,16 +38,15 @@ class CompletedBuilds extends Component {
   render() {
     let mappedBuilds = this.state.builds.map((eachBuildObj) => {
       return (
-        <div className='whitesmoke'>
-          <p>CPU: {eachBuildObj.cpu}</p>
-          <p>Mobtherboard: {eachBuildObj.mobo}</p>
-          <p>Case: {eachBuildObj.pc_case}</p>
-          <p>CPU Cooler: {eachBuildObj.cooler}</p>
-          <p>Graphics Card: {eachBuildObj.gpu}</p>
-          <p>Power Supply: {eachBuildObj.psu}</p>
-          <p>Price: ${eachBuildObj.price}</p>
-          <p>obj id {eachBuildObj.id}</p>
-          <p onClick={() => this.deleteBuild(eachBuildObj)}>Delete</p>
+        <div className='finbuild'>
+          <p className='finitem'>CPU:<br />{eachBuildObj.cpu}</p>
+          <p className='finitem'>Motherboard:<br />{eachBuildObj.mobo}</p>
+          <p className='finitem'>Case:<br />{eachBuildObj.pc_case}</p>
+          <p className='finitem'>CPU Cooler:<br />{eachBuildObj.cooler}</p>
+          <p className='finitem'>GPU:<br />{eachBuildObj.gpu}</p>
+          <p className='finitem'>PSU:<br />{eachBuildObj.psu}</p>
+          <p className='finitem'>Price:<br />${eachBuildObj.price}</p>
+          <p className='finitem yeetdelete' onClick={() => this.deleteBuild(eachBuildObj)}>Delete</p>
         </div>
       )
     })
@@ -69,7 +67,6 @@ class CompletedBuilds extends Component {
 }
 
 const mapStateToProps = (reduxState) => {
-  console.log(reduxState.user)
   return {
     id: reduxState.user.id,
     email: reduxState.user.email

@@ -31,7 +31,7 @@ class Complete extends Component {
           <h4>CPU:</h4> 
           <p>{this.props.cpbrand} {this.props.cpname}</p>
           <p>${this.props.cpprice}</p>
-          <img className='pic' src={this.props.cpimage} alt=''/>
+          <img className='pics' src={this.props.cpimage} alt=''/>
           <Link to='/NewBuild/Cpus'><p className='linkbutt'>Change CPU</p></Link>
           </div>
           :<div>
@@ -45,7 +45,7 @@ class Complete extends Component {
           <p>{this.props.mbrand} {this.props.mname}</p>
           <p>{this.props.msize}</p>
           <p>${this.props.mprice}</p>
-          <img className='pic' src={this.props.mimage} alt=''/>
+          <img className='pics' src={this.props.mimage} alt=''/>
           <Link to='/NewBuild/Motherboards'><p className='linkbutt'>Change Motherboard</p></Link>
           </div>
           :<div>
@@ -59,7 +59,7 @@ class Complete extends Component {
           <p>{this.props.cabrand} {this.props.caname}</p>
           <p>{this.props.casize}</p>
           <p>${this.props.caprice}</p>
-          <img className='pic' src={this.props.caimage} alt=''/>
+          <img className='pics' src={this.props.caimage} alt=''/>
           <Link to='/NewBuild/Cases'><p className='linkbutt'>Change Case</p></Link>
           </div>
           :<div>
@@ -74,7 +74,7 @@ class Complete extends Component {
           <p>{this.props.rsize} GB</p>
           <p>{this.props.rspeed} MHz</p>
           <p>${this.props.rprice}</p>
-          <img className='pic' src={this.props.rimage} alt=''/>
+          <img className='pics' src={this.props.rimage} alt=''/>
           <Link to='/NewBuild/Ram'><p className='linkbutt'>Change RAM</p></Link>
           </div>
           :<div>
@@ -87,7 +87,7 @@ class Complete extends Component {
           <h4>CPU Cooler:</h4> 
           <p>{this.props.cobrand} {this.props.coname}</p>
           <p>${this.props.coprice}</p>
-          <img className='pic' src={this.props.coimage} alt=''/>
+          <img className='pics' src={this.props.coimage} alt=''/>
           <Link to='/NewBuild/Coolers'><p className='linkbutt'>Change CPU Cooler</p></Link>
           </div>
           :<div>
@@ -100,7 +100,7 @@ class Complete extends Component {
           <h4>Graphics Card:</h4> 
           <p>{this.props.gbrand} {this.props.gname}</p>
           <p>${this.props.gprice}</p>
-          <img className='pic' src={this.props.gimage} alt=''/>
+          <img className='pics' src={this.props.gimage} alt=''/>
           <Link to='/NewBuild/Gpus'><p className='linkbutt'>Change Graphics Card</p></Link>
           </div>
           :<div>
@@ -113,7 +113,7 @@ class Complete extends Component {
           <h4>Power Supply:</h4> 
           <p>{this.props.pbrand} {this.props.pname}</p>
           <p>${this.props.pprice}</p>
-          <img className='pic' src={this.props.pimage} alt=''/>
+          <img className='pics' src={this.props.pimage} alt=''/>
           <Link to='/NewBuild/Psus'><p className='linkbutt'>Change Power Supply</p></Link>
           </div>
           :<div>

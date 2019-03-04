@@ -12,19 +12,16 @@ module.exports = {
     res.status(201).send(session.user)
   },
   login: async (req,res) => {
-    console.log('login hit', req.body)
     const {email, password} = req.body;
     const {session} = req
     const db = req.app.get('db')
     let user = await db.user.login({email: email})
     if(user) {
     user = user[0]
-    console.log({user})
     const foundItem = bcrypt.compareSync(password, user.hash);
     if(foundItem) {
       delete user.password
       session.user = user
-      console.log('sesh usr', session.user)
       res.status(200).send(session.user)
     } else {
       res.sendStatus(401)
@@ -41,7 +38,6 @@ module.exports = {
     const newID = req.params.id
     const db = req.app.get('db')
     const user = await db.user.edit_pic({id: newID, pic_link: pic_link})
-    console.log(pic_link, newID)
     res.status(200).send(user)
   }
 }

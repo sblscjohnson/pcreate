@@ -15,7 +15,6 @@ class Ram extends Component {
 
   componentDidMount() {
     const {ram_slots} = this.props
-    console.log('yeet', ram_slots)
       axios.post('/api/ram', {ram_slots}).then(res => {
         this.setState({
           ram_list: res.data

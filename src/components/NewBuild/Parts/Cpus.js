@@ -23,7 +23,6 @@ class Cpus extends Component {
   
   selectCpu(obj) {
     const {brand: cpu_brand, price: cpu_price, name: cpu_name, tier: cpu_tier, socket, image_url: cpu_image} = obj;
-    console.log(cpu_name, cpu_tier, socket, cpu_image);
     this.props.updateCpu({cpu_brand, cpu_price, cpu_name, cpu_tier, socket, cpu_image})
   }
   

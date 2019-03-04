@@ -2,16 +2,16 @@
     font-family: 'Rubik', sans-serif;
     display: flex;
     flex-direction: row;
+    text-align: center;
 }
 
-.tnewsthingy {
+.newcolumn {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin: auto;
     width: 40vw;
-    position: relative;
-    left: 1vw;
+    margin: auto;
+    align-items: center;
+
 }
 
 
@@ -21,6 +21,8 @@
     font-weight: 900;
     margin-top: 5vh;
     color: whitesmoke;
+    margin-bottom: 2vh;
+
 }
 
 .news {
@@ -54,6 +56,7 @@
     font-weight: 600;
 }
 
+
 .link {
     font-size: 14px;
     margin-top: 3vh;
@@ -74,10 +77,45 @@
     width: 40vw;
 }
 
+
+.botwnohead{
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    border: 2px solid black; 
+    background-color: #a7adba;
+    justify-content: center;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    position: relative;
+    padding: 3vw;
+}
+
+.indivthings {
+    text-align: left;
+    margin: auto;
+}
+
+.propic {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+}
+
 .linkthingy {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.indivthing {
+    margin: 2%;
 }
 
 .resource {
@@ -91,13 +129,20 @@
     margin-bottom: 3%;
 }
 
-.links {
+.columnthing {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 100px;
+}
+
+.links {
+     display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 5px;
   border: 2px solid black;
-  
   position: relative;
   top: 1vh;
   background-color: #a7adba;
@@ -107,12 +152,12 @@
 }
 
 .vidofweek {
-    margin-top: 1vh;
+    margin: auto;
     text-align: center;
 }
 
 iframe {
-    margin-top: 1vh;
+    margin: 1vh;
 }
 
 @media (max-width: 1200px) {
@@ -120,31 +165,39 @@ iframe {
     flex-direction: column;
         width: 70vw;
         margin: auto;
+        align-items: center;
         text-align: center;
+        width: 80vw;
     }
     .link {
         font-size: 10px;
     }
-    .tnewsthingy {
+    .newcolumn {
         width: 100%;
     }
     .head {font-size: 15px}
+
     .columnthing {
         flex-direction: column-reverse;
         align-items: center;
         margin: auto;
+        width: 100%;
+    }
+    .botwnohead {
+        margin-bottom: 5vh;
+    }
+    .iframe {
+        width: 60vw;
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
     
     .links {
         font-size: 14px;
-        margin-bottom: 3vh;
     }
     iframe {
         width: auto; 
         height: 167px;
-        
     }
 }

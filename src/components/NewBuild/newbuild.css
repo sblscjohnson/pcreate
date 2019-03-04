@@ -12,6 +12,10 @@
   background-color: #a7adba;
 }
 
+.top::-webkit-scrollbar {
+  display: none;
+}
+
 .part {
   display: flex;
   align-items: center;
@@ -29,7 +33,7 @@
   text-align: center;
   align-items: center;
   border: 2px black solid;
-  background-color: #bfd8d2;
+  background-color: #69779b;
   position: relative;
   width: 40vw;
   left: 30vw;
@@ -39,7 +43,7 @@
 }
 
 .complete {
-  background-color: #bfd8d2;
+  background-color: #acdbdf;
   padding: 1vw;
   border-radius: 5px;
   border: 2px black solid;
@@ -54,8 +58,5 @@
   }
   .part_img {
     height: 10vh;
-  }
-  .top::-webkit-scrollbar {
-    display: none;
   }
 }
