@@ -30,8 +30,8 @@ class Complete extends Component {
           ?<div>
           <h4>CPU:</h4> 
           <p>{this.props.cpbrand} {this.props.cpname}</p>
-          <p>${this.props.cpprice}</p>
           <img className='pics' src={this.props.cpimage} alt=''/>
+          <p>${this.props.cpprice}</p>
           <Link to='/NewBuild/Cpus'><p className='linkbutt'>Change CPU</p></Link>
           </div>
           :<div>
@@ -44,8 +44,8 @@ class Complete extends Component {
           <h4>Motherboard:</h4> 
           <p>{this.props.mbrand} {this.props.mname}</p>
           <p>{this.props.msize}</p>
-          <p>${this.props.mprice}</p>
           <img className='pics' src={this.props.mimage} alt=''/>
+          <p>${this.props.mprice}</p>
           <Link to='/NewBuild/Motherboards'><p className='linkbutt'>Change Motherboard</p></Link>
           </div>
           :<div>
@@ -58,8 +58,8 @@ class Complete extends Component {
           <h4>Case:</h4> 
           <p>{this.props.cabrand} {this.props.caname}</p>
           <p>{this.props.casize}</p>
-          <p>${this.props.caprice}</p>
           <img className='pics' src={this.props.caimage} alt=''/>
+          <p>${this.props.caprice}</p>
           <Link to='/NewBuild/Cases'><p className='linkbutt'>Change Case</p></Link>
           </div>
           :<div>
@@ -73,8 +73,8 @@ class Complete extends Component {
           <p>{this.props.rbrand} {this.props.rname}</p>
           <p>{this.props.rsize} GB</p>
           <p>{this.props.rspeed} MHz</p>
-          <p>${this.props.rprice}</p>
           <img className='pics' src={this.props.rimage} alt=''/>
+          <p>${this.props.rprice}</p>
           <Link to='/NewBuild/Ram'><p className='linkbutt'>Change RAM</p></Link>
           </div>
           :<div>
@@ -86,8 +86,8 @@ class Complete extends Component {
           ?<div>
           <h4>CPU Cooler:</h4> 
           <p>{this.props.cobrand} {this.props.coname}</p>
-          <p>${this.props.coprice}</p>
           <img className='pics' src={this.props.coimage} alt=''/>
+          <p>${this.props.coprice}</p>
           <Link to='/NewBuild/Coolers'><p className='linkbutt'>Change CPU Cooler</p></Link>
           </div>
           :<div>
@@ -99,8 +99,8 @@ class Complete extends Component {
           ?<div>
           <h4>Graphics Card:</h4> 
           <p>{this.props.gbrand} {this.props.gname}</p>
-          <p>${this.props.gprice}</p>
           <img className='pics' src={this.props.gimage} alt=''/>
+          <p>${this.props.gprice}</p>
           <Link to='/NewBuild/Gpus'><p className='linkbutt'>Change Graphics Card</p></Link>
           </div>
           :<div>
@@ -112,8 +112,8 @@ class Complete extends Component {
           ?<div>
           <h4>Power Supply:</h4> 
           <p>{this.props.pbrand} {this.props.pname}</p>
-          <p>${this.props.pprice}</p>
           <img className='pics' src={this.props.pimage} alt=''/>
+          <p>${this.props.pprice}</p>
           <Link to='/NewBuild/Psus'><p className='linkbutt'>Change Power Supply</p></Link>
           </div>
           :<div>

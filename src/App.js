@@ -6,7 +6,6 @@ import {Provider} from 'react-redux';
 import store from './ducks/store';
 import routes from './routes'
 
-
 class App extends Component {
   render() {
     return (

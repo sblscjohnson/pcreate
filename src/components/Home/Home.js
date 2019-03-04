@@ -53,7 +53,7 @@ class Home extends Component {
             </div>
           </div>
           <div className='botw'>
-            <h2 className='head'>BOTW <br /> (Build of The Week)</h2>
+            <h2 className='head'>BOTW<br />(Build of The Week)</h2>
           <div className='botwnohead'>
             <div className='feature'>
             <img className='propic indivthing' src={this.state.botw.pic_link} alt={this.state.botw.email} />
@@ -65,7 +65,7 @@ class Home extends Component {
             <p className='indivthing'>Case: {this.state.botw.pc_case}</p>
             <p className='indivthing'>RAM: {this.state.botw.ram}</p>
             <p className='indivthing'>CPU Cooler: {this.state.botw.cooler}</p>
-            <p className='indivthing'>GPU{this.state.botw.gpu}</p>
+            <p className='indivthing'>GPU: {this.state.botw.gpu}</p>
             <p className='indivthing'>PSU: {this.state.botw.psu}</p>
             <p className='indivthing'>Price: ${this.state.botw.price}</p>
             </div>
