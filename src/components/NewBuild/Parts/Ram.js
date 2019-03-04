@@ -36,6 +36,7 @@ class Ram extends Component {
             <p>Brand: {eachRamObj.brand}</p>
             <p>Name: {eachRamObj.name}</p>
             <p>Size: {eachRamObj.size} GB</p>
+            <p>CAS Latency: {eachRamObj.cas}</p>
             <p>Number of DIMMs: {eachRamObj.dimms}</p>
             <p>Price: ${eachRamObj.price}</p>
             <p>Color: {eachRamObj.color}</p>

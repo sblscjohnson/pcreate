@@ -37,6 +37,7 @@ class Gpus extends Component {
           <div className='textinfo'>
             <p>Brand: {eachGpuObj.brand}</p>
             <p>Name: {eachGpuObj.name}</p>
+            <p>VRAM: {eachGpuObj.ram} GB</p>
             <p>Price: ${eachGpuObj.price}</p>
           </div>
           <Link className='template_button' to='/NewBuild/Psus' onClick={() => this.setGpu(eachGpuObj)}><p>Select</p></Link>

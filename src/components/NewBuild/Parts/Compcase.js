@@ -35,6 +35,7 @@ class Compcase extends Component {
           <div className='textinfo'>
             <p>Brand: {eachCaseObj.brand}</p>
             <p>Name: {eachCaseObj.name}</p>
+            <p>Size: {eachCaseObj.size}</p>
             <p>Price: ${eachCaseObj.price}</p>
           </div>
           <Link className='template_button' to='/NewBuild/Coolers' onClick={() => this.setCase(eachCaseObj)}><p>Select</p></Link>

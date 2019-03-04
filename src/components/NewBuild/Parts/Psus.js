@@ -37,6 +37,8 @@ class Psus extends Component {
           <div className='textinfo'>
             <p>Brand: {eachPsuObj.brand}</p>
             <p>Name: {eachPsuObj.name}</p>
+            <p>Wattage: {eachPsuObj.wattage} W</p>
+            <p>Efficiency: {eachPsuObj.efficiency}</p>
             <p>Price: ${eachPsuObj.price}</p>
           </div>
           <Link className='template_button' to='/NewBuild/Complete' onClick={() => this.setPsu(eachPsuObj)}><p>Select</p></Link>
