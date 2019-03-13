@@ -14,6 +14,7 @@ class Home extends Component {
       author: '',
       content: '',
       url: '',
+      pic_url: '',
       botw: {}
     }
   }
@@ -34,6 +35,7 @@ class Home extends Component {
         author: res.data.articles[randomNum].author,
         content: res.data.articles[randomNum].description,
         url: res.data.articles[randomNum].url,
+        pic_url: res.data.articles[randomNum].urlToImage,
       })
     });
   }
@@ -45,6 +47,7 @@ class Home extends Component {
           <div className='tnewsthingy'>
             <h2 className='head news'>TechCrunch News</h2>
             <div className='technews'>
+              <img className='hello'src={this.state.pic_url} alt='hello' />
               <p className='title'>{this.state.title}</p>
               <p>Written by {this.state.author}</p>
               <p className='date'>{this.state.date}</p>
@@ -52,8 +55,16 @@ class Home extends Component {
               <p className='link'>Link: <a className='url' href={this.state.url} target='_blank' rel="noopener noreferrer">{this.state.url}</a></p>
             </div>
           </div>
+          </div>
+          <div className='columnthing'>
+          
+        <div className='vidofweek'>
+          <h2 className='head'>Video of The Week</h2>
+          <iframe width="560" height="315" title='Level1Techs - Faster Adobe Premiere' src="https://www.youtube.com/embed/96e9grnOTZE" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+        
+        </div>
           <div className='botw'>
-            <h2 className='head'>BOTW<br />(Build of The Week)</h2>
+            <h2 className='head'>Featured Build</h2>
           <div className='botwnohead'>
             <div className='feature'>
             <img className='propic indivthing' src={this.state.botw.pic_link} alt={this.state.botw.email} />
@@ -71,22 +82,6 @@ class Home extends Component {
             </div>
           </div>
           </div>
-          </div>
-          <div className='columnthing'>
-          <div className='linkthingy'>
-            <h2 className='head'>Helpful Resources</h2>
-            <div className='links'>
-              <a className='indthing' href='https://pcpartpicker.com' target='_blank' rel="noopener noreferrer">PCPartPicker</a>
-              <a className='indthing' href='https://www.reddit.com/r/buildapc' target='_blank' rel="noopener noreferrer">r/buildapc</a>
-              <a className='indthing' href='https://www.youtube.com/user/LinusTechTips' target='_blank' rel="noopener noreferrer">Linus Tech Tips</a>
-              <a className='indthing' href='https://www.youtube.com/watch?v=AZRusH5fGIY' target='_blank' rel="noopener noreferrer">The Verge PC Build lol don't watch this</a>
-            </div>
-        </div>
-        <div className='vidofweek'>
-          <h2 className='head'>Video of The Week</h2>
-          <iframe width="560" height="315" title='Level1Techs - Faster Adobe Premiere' src="https://www.youtube.com/embed/96e9grnOTZE" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-        
-        </div>
         </div>
       </div>
     )

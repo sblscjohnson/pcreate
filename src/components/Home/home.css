@@ -9,19 +9,26 @@
     display: flex;
     flex-direction: column;
     width: 45vw;
-    margin: auto;
+    /* margin: auto; */
     align-items: center;
-    position: relative;
+    position: absolute;
+    left: 5vw 
 }
 
 
 .head {
     font-family: Verdana, sans-serif;
     font-weight: 900;
-    margin-top: 5vh;
+    margin-top: 3vh;
+    margin: 1vw;
+    margin-bottom: 0vh;
+    background-color: rgba(0,0,0,.9);
     color: rgba(245, 245, 245, 0.9);
-    margin-bottom: 2vh;
-
+    border: 2px rgba(245, 245, 245, 0.9) solid;
+    padding: .5vw;
+    border-radius: 7px;
+    width: max-content;
+    text-align: left;
 }
 
 .technews {
@@ -30,8 +37,13 @@
     align-items: center;
     border-radius: 5px;
     border: 2px solid black;
-    background-color: rgba(150, 150, 150, 0.7);
+    background-color: rgba(150, 150, 150, 0.9);
     padding: 1vw;
+    margin-bottom: 5vh;
+}
+
+.hello {
+    width: 30vw;
 }
 
 .title {
@@ -40,6 +52,7 @@
     text-align: center;
     width: 80%;
     margin-bottom: 2vh;
+    
 
 }
 
@@ -63,18 +76,25 @@
 .columnthing {
     display: flex;
     flex-direction: column;
-    margin: auto;
+    /* margin: auto; */
     width: 40vw;
+    position: absolute;
+    right: 5vw;
+    
 }
 
+.botw {
+    margin-top: 3vh;
+}
 
 .botwnohead{
     display: flex;
     flex-direction: row;
     border-radius: 5px;
     border: 2px solid black; 
-    background-color: rgba(150, 150, 150, 0.7);
+    background-color: rgba(150, 150, 150, 0.9);
     justify-content: center;
+    width: 40vw;
 }
 
 .feature {
@@ -82,13 +102,17 @@
     flex-direction: column;
     text-align: center;
     align-items: center;
-    position: relative;
     padding: 1vw;
+    position: relative;
+    left: 3vw;
 }
 
 .indivthings {
     text-align: left;
     margin: auto;
+    width: 50%;
+    position: relative;
+    left: 3vw;
 }
 
 .propic {
@@ -108,11 +132,8 @@
     margin: 2%;
 }
 
-
-
-.indthing {
-    font-size: auto;
-    margin-top: 3%;
+.hello {
+    width: 100%;
 }
 
 .columnthing {
@@ -122,27 +143,9 @@
     margin: auto;
 }
 
-.links {
-     display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 5px;
-  border: 2px solid black;
-  position: relative;
-  top: 1vh;
-  background-color: rgba(150, 150, 150, 0.7);
-  padding: 2vh;
-  font-weight: 500;
-  /* margin: auto; */
-}
 
 .vidofweek {
-    margin: auto;
     text-align: center;
-}
-
-iframe {
-    margin: 1vh;
 }
 
 @media (max-width: 1200px) {
@@ -153,35 +156,54 @@ iframe {
         align-items: center;
         text-align: center;
         width: 80vw;
+        margin-top: 3vh;
     }
-    .link {
-        font-size: 10px;
-    }
+   
     .newcolumn {
+        position: relative;
+        left: 0vw;
+        margin: auto;
         width: 100%;
         bottom: 0%;
     }
     .head {font-size: 15px}
 
     .columnthing {
+        position: relative;
+        left: 0vw;
         flex-direction: column-reverse;
         align-items: center;
         margin: auto;
-        width: 100%;
+        width: 80vw;
         bottom: 0%;
     }
-    .linkthingy {
-        margin-bottom: 5vh;
+    
+    .botwnohead {
+        width: 80vw;
+        height: 32vh;
     }
-    .iframe {
-        width: 60vw;
+    .feature {
+        left: 7vw;
     }
+    .indivthing {
+        left: 7vw;
+    }
+    .vidofweek {
+        margin-top: 5vh;
+        width: 80vw;
+        margin-bottom: 3vh;
+    }
+   
 }
 
 @media (max-width: 600px) {
     
     .links {
         font-size: 14px;
+    }
+    .feature {
+        left: 2vw;
+        top: 3vh;
     }
     iframe {
         width: auto; 

@@ -9,7 +9,7 @@
   flex-direction: row;
   overflow: scroll;
   border-bottom: 2px black solid;
-  background-color: rgba(150, 150, 150, 0.7);
+  background-color: rgba(150, 150, 150, 0.9);
 }
 
 .top::-webkit-scrollbar {
@@ -43,7 +43,7 @@
 } */
 
 .complete {
-  background-color: rgba(22, 75, 106, 0.7);
+  background-color: rgba(22, 75, 106, 0.9);
   padding: 1vw;
   border-radius: 5px;
   border: 2px black solid;

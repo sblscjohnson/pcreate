@@ -35,7 +35,7 @@ class Complete extends Component {
           <Link to='/NewBuild/Cpus'><p className='linkbutt'>Change CPU</p></Link>
           </div>
           :<div>
-          <Link to='/NewBuild/Cpus'><p className='linkbutt'>Add CPU</p></Link>
+          <Link to='/NewBuild/Cpus'><p className='linkbutt new'>Add CPU</p></Link>
           </div>
         }</div>
         <div className='inditem'>{
@@ -49,7 +49,7 @@ class Complete extends Component {
           <Link to='/NewBuild/Motherboards'><p className='linkbutt'>Change Motherboard</p></Link>
           </div>
           :<div>
-          <Link to='/NewBuild/Motherboards'><p className='linkbutt'>Add Motherboard</p></Link>
+          <Link to='/NewBuild/Motherboards'><p className='linkbutt new'>Add Motherboard</p></Link>
           </div>
         }</div>
         <div className='inditem'>{
@@ -63,7 +63,7 @@ class Complete extends Component {
           <Link to='/NewBuild/Cases'><p className='linkbutt'>Change Case</p></Link>
           </div>
           :<div>
-          <Link to='/NewBuild/Cases'><p className='linkbutt'>Add Case</p></Link>
+          <Link to='/NewBuild/Cases'><p className='linkbutt new'>Add Case</p></Link>
           </div>
         }</div>
         <div className='inditem'>{
@@ -78,7 +78,7 @@ class Complete extends Component {
           <Link to='/NewBuild/Ram'><p className='linkbutt'>Change RAM</p></Link>
           </div>
           :<div>
-          <Link to='/NewBuild/Ram'><p className='linkbutt'>Add RAM</p></Link>
+          <Link to='/NewBuild/Ram'><p className='linkbutt new'>Add RAM</p></Link>
           </div>
         }</div>
         <div className='inditem'>{
@@ -91,7 +91,7 @@ class Complete extends Component {
           <Link to='/NewBuild/Coolers'><p className='linkbutt'>Change CPU Cooler</p></Link>
           </div>
           :<div>
-          <Link to='/NewBuild/Coolers'><p className='linkbutt'>Add CPU Cooler</p></Link>
+          <Link to='/NewBuild/Coolers'><p className='linkbutt new'>Add CPU Cooler</p></Link>
           </div>
         }</div>
         <div className='inditem'>{
@@ -104,7 +104,7 @@ class Complete extends Component {
           <Link to='/NewBuild/Gpus'><p className='linkbutt'>Change Graphics Card</p></Link>
           </div>
           :<div>
-          <Link to='/NewBuild/Gpus'><p className='linkbutt'>Add Graphics Card</p></Link>
+          <Link to='/NewBuild/Gpus'><p className='linkbutt new'>Add Graphics Card</p></Link>
           </div>
         }</div>
         <div className='inditem'>{
@@ -117,7 +117,7 @@ class Complete extends Component {
           <Link to='/NewBuild/Psus'><p className='linkbutt'>Change Power Supply</p></Link>
           </div>
           :<div>
-          <Link to='/NewBuild/Psus'><p className='linkbutt'>Add Power Supply</p></Link>
+          <Link to='/NewBuild/Psus'><p className='linkbutt new'>Add Power Supply</p></Link>
           </div>
         }</div>
         <h3>Total Price: ${(this.props.cpprice + this.props.mprice+ this.props.caprice + this.props.rprice + this.props.coprice + this.props.gprice + this.props.pprice).toFixed(2)}</h3>

@@ -73,7 +73,7 @@ a:visited { text-decoration: none; color: rgba(245, 245, 245, 0.9) }
 }
 
 .profile_pic {
-  background-color: rgba(245, 245, 245, 0.7);
+  background-color: rgba(245, 245, 245, 0.9);
   border-radius: 50%;
   height: 60px;
   /* position: absolute; */
@@ -118,7 +118,7 @@ a:visited { text-decoration: none; color: rgba(245, 245, 245, 0.9) }
   }
   .normal_nav {
     display: flex;
-    background-color: rgba(150, 150, 150, 0.7);
+    background-color: rgba(150, 150, 150, 0.9);
     position: relative;
     right: 5vw;
     border-radius: 5px;
