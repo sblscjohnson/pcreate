@@ -120,7 +120,10 @@ class Complete extends Component {
           <Link to='/NewBuild/Psus'><p className='linkbutt new'>Add Power Supply</p></Link>
           </div>
         }</div>
-        <h3>Total Price: ${(this.props.cpprice + this.props.mprice+ this.props.caprice + this.props.rprice + this.props.coprice + this.props.gprice + this.props.pprice).toFixed(2)}</h3>
+        <div className='ttpri'>
+        <h3>Total Price: ${(this.props.cpprice + this.props.mprice+ this.props.caprice + this.props.rprice + this.props.coprice + this.props.gprice + this.props.pprice).toFixed(2)}
+        </h3>
+        </div>
         <Link className='addbutt' to='/CompletedBuilds'><p onClick={this.newBuild}>Add To Completed Builds</p></Link>
         <p className='clearbutt' onClick={this.clearBuild}>Clear</p>
       </div>
