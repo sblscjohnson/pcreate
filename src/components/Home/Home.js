@@ -21,7 +21,7 @@ class Home extends Component {
   
   componentDidMount() {
     axios.get('/api/completebuilds/all').then(res => {
-      const num = Math.floor(Math.random() * (res.data.length - 1)) + 1
+      const num = Math.floor(Math.random() * (res.data.length))
       this.setState({
         botw: res.data[num]
       })
@@ -29,6 +29,7 @@ class Home extends Component {
     axios.get(`https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${API_KEY}`)
     .then(res => {
       const randomNum = Math.floor((Math.random() * 10))
+      console.log(randomNum)
       this.setState({
         title: res.data.articles[randomNum].title,
         date: res.data.articles[randomNum].publishedAt.substring(0, 10),
@@ -59,7 +60,7 @@ class Home extends Component {
           <div className='columnthing'>
           
         <div className='vidofweek'>
-          <h2 className='head'>Video of The Week</h2>
+          <h2 className='head'>Featured Video</h2>
           <iframe width="560" height="315" title='Level1Techs - Faster Adobe Premiere' src="https://www.youtube.com/embed/96e9grnOTZE" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         
         </div>

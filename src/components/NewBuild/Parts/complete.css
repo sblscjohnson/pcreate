@@ -54,18 +54,14 @@ h3 {
 }
 
 .linkbutt {
-  position: relative;
-  left: 7.5%;
-  width: 85%;
+  margin: auto;
+  display: flex;
   justify-content: center;
   border-radius: 5px;
-  text-align: center;
   background-color: rgba(22, 75, 106, 0.9);
   font-size: 18px;
   padding: 5%;
-  margin-top: 2vh;
   border: 2px black solid;
-  width: max-content;
 }
 
 .new {
@@ -125,7 +121,9 @@ h3 {
   }
   .linkbutt {
     width: 60%;
-    left: 15%
+    left: 15%;
+    padding-left: 15%;
+    padding-right: 15%;
   }
 
 }

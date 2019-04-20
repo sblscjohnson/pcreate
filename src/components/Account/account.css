@@ -39,6 +39,8 @@
   border-radius: 7px;
   text-align: center;
   border: 2px black solid;
+  position: relative;
+  bottom: 15px;
 }
 
 .r {
